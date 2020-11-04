@@ -1,13 +1,10 @@
 package com.meshdesh.triffler.common.account
 
 import com.meshdesh.triffler.common.data.Credentials
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-@InstallIn(ApplicationComponent::class)
 class AccountManager @Inject constructor(
     private val localStorage: LocalStorage
 ) {

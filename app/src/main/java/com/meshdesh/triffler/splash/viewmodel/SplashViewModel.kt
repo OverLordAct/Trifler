@@ -1,5 +1,6 @@
 package com.meshdesh.triffler.splash.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 
-class SplashViewMode : ViewModel()
+class SplashViewModel @ViewModelInject constructor() : ViewModel()
