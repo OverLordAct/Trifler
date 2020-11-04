@@ -54,4 +54,5 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-2.2.0vedstate:sa"
     kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
 }
