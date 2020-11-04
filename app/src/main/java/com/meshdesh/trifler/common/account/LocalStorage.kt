@@ -1,4 +1,4 @@
-package com.meshdesh.triffler.common.account
+package com.meshdesh.trifler.common.account
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -7,7 +7,9 @@ import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.lang.reflect.Type
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class LocalStorage @Inject constructor(
     @ApplicationContext private val context: Context,
     private val gson: Gson
@@ -50,5 +52,6 @@ class LocalStorage @Inject constructor(
 
 enum class KEY {
     CREDENTIALS,
-    TOKEN
+    TOKEN,
+    ONBOARDING
 }
