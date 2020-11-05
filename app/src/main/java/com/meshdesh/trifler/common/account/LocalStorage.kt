@@ -24,18 +24,19 @@ class LocalStorage @Inject constructor(
         Context.MODE_PRIVATE
     )
 
-    fun set(key: KEY, value: Any) {
+    operator fun set(key: KEY, value: Any) {
         sharedPreference.edit()
             .putString(key.toString(), gson.toJson(value))
             .apply()
     }
 
-    inline fun <reified T : Any> get(key: KEY, defaultValue: T? = null): T? {
+    inline operator fun <reified T : Any> get(key: KEY, defaultValue: T? = null): T? {
         val type = object : TypeToken<T>() {}.type
         return internalGet(key, type, defaultValue)
     }
 
-    fun <T : Any> internalGet(key: KEY, type: Type, defaultValue: T? = null): T? {
+    @PublishedApi
+    internal fun <T : Any> internalGet(key: KEY, type: Type, defaultValue: T? = null): T? {
         return try {
             return gson.fromJson(sharedPreference.getString(key.toString(), null), type)
         } catch (e: Exception) {
