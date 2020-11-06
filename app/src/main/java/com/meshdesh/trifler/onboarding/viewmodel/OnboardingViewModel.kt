@@ -1,0 +1,3 @@
+package com.meshdesh.trifler.onboarding.viewmodel
+
+interface OnboardingViewModel

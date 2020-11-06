@@ -1,10 +1,12 @@
 package com.meshdesh.trifler.splash.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.onboarding.view.ViewPagerActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModelImpl
 import com.meshdesh.trifler.util.observe
@@ -32,7 +34,14 @@ class SplashActivity : AppCompatActivity() {
             is SplashActivityViewModel.AccountStatus.Unauthenticated -> {
                 // TODO Redirect to Onboarding Flow
                 Toast.makeText(this, "Unauthenticated", Toast.LENGTH_SHORT).show()
+                createIntent()
             }
         }
+    }
+
+    private fun createIntent() {
+        val intent = Intent(this, ViewPagerActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
