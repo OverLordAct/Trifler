@@ -15,16 +15,21 @@
         android:id="@+id/dots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:dotsColor="#03A9F4"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="16dp"
-        app:dotsSpacing="4dp"
-        app:dotsWidthFactor="2.5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/dotsStyle"
+        app:layout_constraintBottom_toBottomOf="@id/skipButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:progressMode="true"
-        app:selectedDotColor="#2962FF" />
+        app:layout_constraintTop_toTopOf="@id/skipButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/skipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/skip"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
