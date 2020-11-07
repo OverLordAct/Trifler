@@ -10,4 +10,6 @@
     <color name="charcoal">#464646</color>
     <color name="dimgray">#6F6F6F</color>
     <color name="radicalred">#FF3C41</color>
+    <color name="gainsboro">#DFDFDF</color>
+    <color name="grey">#888888</color>
 </resources>

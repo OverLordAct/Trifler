@@ -34,7 +34,7 @@ class SplashActivity : AppCompatActivity() {
             is SplashActivityViewModel.AccountStatus.Unauthenticated -> {
                 // TODO Redirect to Onboarding Flow
                 Toast.makeText(this, "Unauthenticated", Toast.LENGTH_SHORT).show()
-                createIntent()
+//                createIntent()
             }
         }
     }

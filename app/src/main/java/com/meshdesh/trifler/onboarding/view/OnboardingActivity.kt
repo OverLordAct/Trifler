@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.meshdesh.trifler.R
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_view_pager.*
+import kotlinx.android.synthetic.main.activity_onboarding.*
 
 const val PAGES = 3
 
@@ -17,7 +17,7 @@ class ViewPagerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_pager)
+        setContentView(R.layout.activity_onboarding)
         setViewPager()
         setSkipButton()
     }

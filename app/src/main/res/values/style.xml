@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="T20CharcoalBold">
         <item name="android:textSize">20sp</item>s
         <item name="android:textColor">@color/charcoal</item>
@@ -22,5 +21,13 @@
         <item name="dotsWidthFactor">2.5</item>
         <item name="dotsStrokeWidth">2dp</item>
         <item name="progressMode">true</item>
+    </style>
+
+    <style name="Widget.Button.Skip" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="backgroundTint">@color/gainsboro</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="minHeight">0dp</item>
     </style>
 </resources>
