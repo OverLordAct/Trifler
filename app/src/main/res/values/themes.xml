@@ -10,18 +10,16 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Customize your theme here. -->
-        <item name="colorOnSurface">#DFDFDF</item>
+        <item name="colorOnSurface">@color/gainsboro</item>
     </style>
 
-    <style name="Base.Theme.Trifler" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+    <style name="Base.Theme.Trifler" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorPrimary</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
-        <item name="android:navigationBarColor" tools:ignore="NewApi">
-            ?android:attr/colorBackground
+        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorPrimary
         </item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
-            ?attr/colorControlHighlight
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorPrimary
         </item>
     </style>
 </resources>

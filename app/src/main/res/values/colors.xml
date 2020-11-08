@@ -12,4 +12,5 @@
     <color name="radicalred">#FF3C41</color>
     <color name="gainsboro">#DFDFDF</color>
     <color name="grey">#888888</color>
+    <color name="whiteLight">#F8F8F8</color>
 </resources>
