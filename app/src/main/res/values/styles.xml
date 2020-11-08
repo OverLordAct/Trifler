@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="OnboardingMainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="T20CharcoalBold">
+        <item name="android:textSize">20sp</item>s
+        <item name="android:textColor">@color/charcoal</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="T16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/dimgray</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="dotsStyle">
+        <item name="dotsColor">@color/radicalred</item>
+        <item name="dotsStrokeColor">@color/dimgray</item>
+        <item name="dotsCornerRadius">10dp</item>
+        <item name="dotsSize">12dp</item>
+        <item name="dotsSpacing">3dp</item>
+        <item name="dotsWidthFactor">2.5</item>
+        <item name="dotsStrokeWidth">2dp</item>
+        <item name="progressMode">true</item>
+    </style>
+
+    <style name="Widget.Button.Skip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="minHeight">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/gainsboro</item>
+    </style>
+</resources>

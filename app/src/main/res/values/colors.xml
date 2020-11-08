@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="charcoal">#464646</color>
+    <color name="dimgray">#6F6F6F</color>
+    <color name="radicalred">#FF3C41</color>
+    <color name="gainsboro">#DFDFDF</color>
+    <color name="grey">#888888</color>
+    <color name="whiteLight">#F8F8F8</color>
 </resources>

@@ -26,7 +26,7 @@ class AppModule {
     @Singleton
     @Provides
     // TODO Add baseUrl
-    fun providesRetrofitBuilder(gson: Gson): Retrofit.Builder {
+    fun providesRetrofitBuilder(): Retrofit.Builder {
         return Retrofit.Builder()
             .baseUrl("")
             .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create())

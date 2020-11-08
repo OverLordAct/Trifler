@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -15,7 +16,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -43,13 +44,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    // Datastore
-    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha02"
-    implementation "androidx.datastore:datastore-core:1.0.0-alpha02"
+    implementation 'com.android.support:multidex:1.0.3'
 
     // Viewmodel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
@@ -62,8 +61,8 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
 
     // Hilt
-    implementation "com.google.dagger:hilt-android:2.28-alpha"
-    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+    implementation 'com.google.dagger:hilt-android:2.29.1-alpha'
+    kapt 'com.google.dagger:hilt-android-compiler:2.29.1-alpha'
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 
@@ -71,4 +70,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    // Dot Indicator
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
+    // Viewpager
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    // Support Annotations
+    implementation 'com.android.support:support-annotations:28.0.0'
 }

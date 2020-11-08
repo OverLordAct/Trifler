@@ -1,14 +1,19 @@
 package com.meshdesh.trifler.splash.view
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.onboarding.view.ViewPagerActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModelImpl
 import com.meshdesh.trifler.util.observe
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_splash.*
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
@@ -19,7 +24,18 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        viewModelImpl.accountStatus.observe(this, ::onAccountStatusChanged)
+        logo.animate()
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator?) {
+                    super.onAnimationEnd(animation)
+                    viewModelImpl.accountStatus.observe(
+                        this@SplashActivity,
+                        this@SplashActivity::onAccountStatusChanged
+                    )
+                }
+            })
+            .alpha(1F)
+            .duration = 1000
     }
 
     private fun onAccountStatusChanged(status: SplashActivityViewModel.AccountStatus) {
@@ -31,8 +47,16 @@ class SplashActivity : AppCompatActivity() {
 
             is SplashActivityViewModel.AccountStatus.Unauthenticated -> {
                 // TODO Redirect to Onboarding Flow
-                Toast.makeText(this, "Unauthenticated", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "Unauthenticated", Toast.LENGTH_SHORT).show()
+                createIntent()
             }
         }
+    }
+
+    private fun createIntent() {
+        val intent = Intent(this, ViewPagerActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.animator.appears_from_right, R.animator.disappear_to_left)
+        finish()
     }
 }
