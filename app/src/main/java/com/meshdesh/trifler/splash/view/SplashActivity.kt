@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.onboarding.view.ViewPagerActivity
+import com.meshdesh.trifler.onboarding.view.OnboardingActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModelImpl
 import com.meshdesh.trifler.util.observe
@@ -54,7 +54,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun createIntent() {
-        val intent = Intent(this, ViewPagerActivity::class.java)
+        val intent = Intent(this, OnboardingActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.animator.appears_from_right, R.animator.disappear_to_left)
         finish()
