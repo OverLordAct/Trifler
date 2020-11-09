@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Customize your theme here. -->
         <item name="colorOnSurface">@color/gainsboro</item>
+        <item name="materialButtonStyle">@style/ButtonBaseStyle</item>
     </style>
 
     <style name="Base.Theme.Trifler" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -21,5 +22,11 @@
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorPrimary
         </item>
+    </style>
+
+    <style name="ButtonBaseStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
     </style>
 </resources>
