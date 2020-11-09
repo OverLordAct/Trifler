@@ -1,10 +1,12 @@
 package com.meshdesh.trifler.onboarding.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.meshdesh.trifler.R
 import com.meshdesh.trifler.common.animation.AnimationHelper
+import com.meshdesh.trifler.login.view.LoginActivity
 import com.meshdesh.trifler.util.setInvisible
 import com.meshdesh.trifler.util.setVisible
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,6 +28,15 @@ class OnboardingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_onboarding)
         setViewPager()
         setSkipButton()
+        setGetStartedButton()
+    }
+
+    private fun setGetStartedButton() {
+        getStarted.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun setViewPager() {

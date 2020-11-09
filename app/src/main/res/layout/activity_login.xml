@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".login.view.LoginActivity">
 
+    <com.meshdesh.trifler.common.customview.SigninUpHeader
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:buttonText="@string/sign_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitlePrimaryText="@string/signin_subtitle_primary"
+        app:subtitleSecondaryText="@string/signin_subtitle_secondary"
+        app:titleText="@string/signin_title" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
