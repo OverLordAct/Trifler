@@ -1,75 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".login.view.LoginActivity">
+    android:layout_height="match_parent">
 
-    <com.meshdesh.trifler.common.customview.SigninUpHeader
-        android:id="@+id/header"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:buttonText="@string/sign_in"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:subtitlePrimaryText="@string/signin_subtitle_primary"
-        app:subtitleSecondaryText="@string/signin_subtitle_secondary"
-        app:titleText="@string/signin_title" />
+        tools:context=".login.view.LoginActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailContainer"
-        style="@style/TextInputLayout.FilledBox.CustomFont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="55dp"
-        android:hint="@string/email"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/nobel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailText"
+        <com.meshdesh.trifler.common.customview.SigninUpHeader
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            app:buttonText="@string/sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitlePrimaryText="@string/signin_subtitle_primary"
+            app:subtitleSecondaryText="@string/signin_subtitle_secondary"
+            app:titleText="@string/signin_title" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordContainer"
-        style="@style/TextInputLayout.FilledBox.CustomFont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="55dp"
-        android:hint="@string/password"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/nobel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailContainer">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailContainer"
+            style="@style/TextInputLayout.FilledBox.CustomFont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:layout_marginHorizontal="55dp"
+            android:layout_marginTop="42dp"
+            android:hint="@string/email"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/nobel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordContainer"
+            style="@style/TextInputLayout.FilledBox.CustomFont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/password"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/nobel"
+            app:layout_constraintEnd_toEndOf="@id/emailContainer"
+            app:layout_constraintStart_toStartOf="@id/emailContainer"
+            app:layout_constraintTop_toBottomOf="@id/emailContainer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
+            style="@style/SignMainButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/sign_in"
+            app:layout_constraintEnd_toEndOf="@id/emailContainer"
+            app:layout_constraintStart_toStartOf="@id/emailContainer"
+            app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
+
+        <include
+            android:id="@+id/divider"
+            layout="@layout/custom_or_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButtonGoogle"
+            style="@style/SignMainButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/sign_in_google"
+            app:icon="@drawable/ic_google_icon"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/emailContainer"
+            app:layout_constraintStart_toStartOf="@id/emailContainer"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

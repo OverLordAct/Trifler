@@ -11,7 +11,8 @@ class SigninUpHeader(
     attr: AttributeSet
 ) : ConstraintLayout(context, attr) {
 
-    var buttonClicked: (() -> Unit)? = null
+    private var primaryButtonClicked: (() -> Unit)? = null
+    private var secondaryButtonClicked: (() -> Unit)? = null
 
     init {
         inflate(context, R.layout.custom_signin_signup_header, this)
@@ -21,13 +22,13 @@ class SigninUpHeader(
             setTitle(getString(R.styleable.SigninUpHeader_titleText).toString())
             setSubtitlePrimary(getString(R.styleable.SigninUpHeader_subtitlePrimaryText).toString())
             setSubtitleSecondary(getString(R.styleable.SigninUpHeader_subtitleSecondaryText).toString())
-            buttonClicked?.let { setButtonClickListener(it) }
+            primaryButtonClicked?.let { setButtonClickListener(it) }
             recycle()
         }
     }
 
     fun setButtonText(text: String) {
-        navButton.text = text
+        primaryButton.text = text
     }
 
     fun setTitle(text: String) {
@@ -43,9 +44,16 @@ class SigninUpHeader(
     }
 
     fun setButtonClickListener(listener: (() -> Unit)) {
-        buttonClicked = listener
-        navButton.setOnClickListener {
-            buttonClicked?.invoke()
+        primaryButtonClicked = listener
+        primaryButton.setOnClickListener {
+            primaryButtonClicked?.invoke()
+        }
+    }
+
+    fun secondaryButtonClickListener(listener: (() -> Unit)) {
+        secondaryButtonClicked = listener
+        subtitle_secondary.setOnClickListener {
+            secondaryButtonClicked?.invoke()
         }
     }
 }

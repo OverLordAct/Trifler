@@ -3,9 +3,12 @@
     <string name="skip">Skip</string>
     <string name="get_started">Get Started</string>
     <string name="sign_in">Sign in</string>
+    <string name="sign_in_google">Sign in with Google</string>
     <string name="signin_title">Welcome Back</string>
     <string name="signin_subtitle_primary">Don\'t have an account?</string>
     <string name="signin_subtitle_secondary">Sign up</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="or">OR</string>
+    <string name="sign_up">Sign up</string>
 </resources>
