@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="OnboardingMainButton">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
-    </style>
-
     <style name="T20CharcoalBold">
         <item name="android:textSize">20sp</item>s
         <item name="android:textColor">@color/charcoal</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-    <style name="T16">
+    <style name="T16DimGrayMedium" parent="TextDimGrayMedium">
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="T18DimGrayMedium" parent="TextDimGrayMedium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="T18RadicalRedMedium" parent="TextDimGrayMedium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+    </style>
+
+    <style name="TextDimGrayMedium">
         <item name="android:textColor">@color/dimgray</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="T32RedBold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+    </style>
+
+    <style name="RoundedBaseButton">
+        <item name="cornerRadius">999dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="OnboardingMainButton" parent="RoundedBaseButton">
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="SignMainButton" parent="RoundedBaseButton">
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="SignInOutHeaderButton" parent="RoundedBaseButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
     <style name="dotsStyle">
@@ -35,8 +72,61 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/grey</item>
         <item name="fontFamily">@font/poppins_bold</item>
-        <item name="minHeight">0dp</item>
         <item name="strokeWidth">1dp</item>
         <item name="strokeColor">@color/gainsboro</item>
     </style>
+
+    <style name="HintTextAppearance" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorHint">@color/radicalred</item>
+    </style>
+
+<!--    For outlined edit text layour with custom font-->
+    <style name="TextInputLayout.OutlineBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont</item>
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="editTextStyle">@style/TextInputEditText.OutlinedBox.CustomFont</item>
+    </style>
+
+    <style name="TextInputEditText.OutlinedBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+<!--     For filled edit text with custom font-->
+    <style name="TextInputLayout.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.FilledBox.CustomFont</item>
+        <item name="android:textColorHint">@color/nobel</item>
+        <item name="boxBackgroundColor">@color/whitesmoke</item>
+        <item name="hintTextColor">@color/nobel</item>
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText.FilledBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="editTextStyle">@style/TextInputEditText.FilledBox.CustomFont</item>
+    </style>
+
+    <style name="TextInputEditText.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+<!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
+<!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
+<!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
+<!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
+<!--        <item name="android:fontFamily">@font/poppins</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
+<!--        <item name="android:fontFamily">@font/poppins</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
+<!--        <item name="android:fontFamily">@font/poppins</item>-->
+<!--    </style>-->
 </resources>
