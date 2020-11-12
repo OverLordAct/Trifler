@@ -1,14 +1,23 @@
 <resources>
     <string name="app_name">Trifler</string>
-    <string name="skip">Skip</string>
-    <string name="get_started">Get Started</string>
-    <string name="sign_in">Sign in</string>
-    <string name="sign_in_google">Sign in with Google</string>
-    <string name="signin_title">Welcome Back</string>
-    <string name="signin_subtitle_primary">Don\'t have an account?</string>
-    <string name="signin_subtitle_secondary">Sign up</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+
+<!--    Onboarding-->
+    <string name="oboarding_skip_button">Skip</string>
+    <string name="onboarding_get_started_button">Get Started</string>
+
+<!--    Login in-->
+    <string name="login_primary_button">Sign in</string>
+    <string name="logiin_secondary_button">Sign in with Google</string>
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle_primary">Don\'t have an account?</string>
+    <string name="login_subtitle_secondary">Sign up</string>
+    <string name="login_email_field">Email</string>
+    <string name="login_password_field">Password</string>
     <string name="or">OR</string>
-    <string name="sign_up">Sign up</string>
+    <string name="login_redirect_button">Sign up</string>
+
+<!--    Sign up-->
+    <string name="create_account">Create Account</string>
+    <string name="login_primary_text">Already have an account?</string>
+    <string name="signup_button_text">Sign in</string>
 </resources>
