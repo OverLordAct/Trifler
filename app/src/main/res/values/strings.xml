@@ -7,7 +7,7 @@
 
 <!--    Login in-->
     <string name="login_primary_button">Sign in</string>
-    <string name="logiin_secondary_button">Sign in with Google</string>
+    <string name="login_secondary_button">Sign in with Google</string>
     <string name="login_title">Welcome Back</string>
     <string name="login_subtitle_primary">Don\'t have an account?</string>
     <string name="login_subtitle_secondary">Sign up</string>
@@ -18,6 +18,14 @@
 
 <!--    Sign up-->
     <string name="create_account">Create Account</string>
-    <string name="login_primary_text">Already have an account?</string>
-    <string name="signup_button_text">Sign in</string>
+    <string name="signup_primary_text">Already have an account?</string>
+    <string name="signup_redirect_text">Sign in</string>
+    <string name="signup_subtitle_secondary">Sign In</string>
+    <string name="signup_first_name">First Name</string>
+    <string name="signup_last_name">Last Name</string>
+    <string name="signup_email">Email</string>
+    <string name="signup_terms_and_conditions"><![CDATA[I agree to Term & Condition and Privacy Policy]]></string>
+    <string name="signup_updated">Keep me updated with new versions</string>
+    <string name="signup_primary_button">Sign up with email</string>
+    <string name="signup_secondary_button">Sign up with Google</string>
 </resources>

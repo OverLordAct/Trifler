@@ -1,9 +1,11 @@
 package com.meshdesh.trifler.login.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.signup.view.SignupActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -18,7 +20,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setHeader() {
         header.setButtonClickListener {
-            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, SignupActivity::class.java))
+            finish()
         }
     }
 }
