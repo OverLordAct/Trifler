@@ -14,13 +14,13 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:buttonText="@string/sign_up"
+            app:buttonText="@string/login_redirect_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:subtitlePrimaryText="@string/signin_subtitle_primary"
-            app:subtitleSecondaryText="@string/signin_subtitle_secondary"
-            app:titleText="@string/signin_title" />
+            app:subtitlePrimaryText="@string/login_subtitle_primary"
+            app:subtitleSecondaryText="@string/login_subtitle_secondary"
+            app:titleText="@string/login_title" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailContainer"
@@ -28,12 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="55dp"
-            android:layout_marginTop="42dp"
-            android:hint="@string/email"
-            app:boxCornerRadiusBottomEnd="5dp"
-            app:boxCornerRadiusBottomStart="5dp"
-            app:boxCornerRadiusTopEnd="5dp"
-            app:boxCornerRadiusTopStart="5dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/login_email_field"
             app:endIconMode="clear_text"
             app:endIconTint="@color/nobel"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +40,8 @@
                 android:id="@+id/emailText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,11 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/password"
-            app:boxCornerRadiusBottomEnd="5dp"
-            app:boxCornerRadiusBottomStart="5dp"
-            app:boxCornerRadiusTopEnd="5dp"
-            app:boxCornerRadiusTopStart="5dp"
+            android:hint="@string/login_password_field"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/nobel"
             app:layout_constraintEnd_toEndOf="@id/emailContainer"
@@ -69,17 +62,18 @@
                 android:id="@+id/passwordText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
-            style="@style/SignMainButton"
+            style="@style/RoundedFilledButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/sign_in"
+            android:text="@string/login_primary_button"
             app:layout_constraintEnd_toEndOf="@id/emailContainer"
             app:layout_constraintStart_toStartOf="@id/emailContainer"
             app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
@@ -89,28 +83,27 @@
             layout="@layout/custom_or_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginButton" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButtonGoogle"
-            style="@style/SignMainButton"
+            style="@style/RoundedFilledButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/sign_in_google"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/login_secondary_button"
             app:icon="@drawable/ic_google_icon"
             app:iconGravity="textStart"
             app:iconPadding="8dp"
             app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/emailContainer"
             app:layout_constraintStart_toStartOf="@id/emailContainer"
-            app:layout_constraintTop_toBottomOf="@id/divider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/divider" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

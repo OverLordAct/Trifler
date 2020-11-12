@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".signup.view.SignupActivity">
+
+        <com.meshdesh.trifler.common.customview.SigninUpHeader
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:buttonText="@string/signup_redirect_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitlePrimaryText="@string/signup_primary_text"
+            app:subtitleSecondaryText="@string/signup_subtitle_secondary"
+            app:titleText="@string/create_account" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstNameTextLayout"
+            style="@style/TextInputLayout.FilledBox.CustomFont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/signup_first_name"
+            app:layout_constraintEnd_toStartOf="@id/lastNameTextLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastNameTextLayout"
+            style="@style/TextInputLayout.FilledBox.CustomFont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="57dp"
+            android:hint="@string/signup_last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/firstNameTextLayout"
+            app:layout_constraintTop_toTopOf="@id/firstNameTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTextLayout"
+            style="@style/TextInputLayout.FilledBox.CustomFont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/signup_email"
+            app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
+            app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/firstNameTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/termsCheckbox"
+            style="@style/Checkbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="top"
+            android:paddingStart="9dp"
+            android:paddingEnd="9dp"
+            android:text="@string/signup_terms_and_conditions"
+            app:layout_constraintEnd_toEndOf="@id/emailTextLayout"
+            app:layout_constraintStart_toStartOf="@id/emailTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/emailTextLayout" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/updatedCheckbox"
+            style="@style/Checkbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="top"
+            android:paddingStart="9dp"
+            android:paddingEnd="9dp"
+            android:text="@string/signup_updated"
+            app:layout_constraintEnd_toEndOf="@id/emailTextLayout"
+            app:layout_constraintStart_toStartOf="@id/emailTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/termsCheckbox" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signUpEmailButton"
+            style="@style/RoundedFilledButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/signup_primary_button"
+            app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
+            app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/updatedCheckbox" />
+
+        <include
+            android:id="@+id/divider"
+            layout="@layout/custom_or_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUpEmailButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signUpGoogleButton"
+            style="@style/RoundedFilledButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/signup_secondary_button"
+            app:icon="@drawable/ic_google_icon"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
+            app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
