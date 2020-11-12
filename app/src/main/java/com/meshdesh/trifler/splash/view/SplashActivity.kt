@@ -11,7 +11,6 @@ import com.meshdesh.trifler.R
 import com.meshdesh.trifler.onboarding.view.OnboardingActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModelImpl
-import com.meshdesh.trifler.util.observe
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_splash.*
 
@@ -28,9 +27,10 @@ class SplashActivity : AppCompatActivity() {
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator?) {
                     super.onAnimationEnd(animation)
+
                     viewModelImpl.accountStatus.observe(
                         this@SplashActivity,
-                        this@SplashActivity::onAccountStatusChanged
+                        ::onAccountStatusChanged
                     )
                 }
             })
