@@ -2,7 +2,7 @@ package com.meshdesh.trifler.common.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.meshdesh.trifler.common.data.calladapters.RxErrorHandlingCallAdapterFactory
+import com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter.CoroutinesCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +14,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ApplicationComponent::class)
 class AppModule {
+
+    private val baseUrl = "https://trifler.herokuapp.com"
 
     @Singleton
     @Provides
@@ -28,8 +30,8 @@ class AppModule {
     // TODO Add baseUrl
     fun providesRetrofitBuilder(): Retrofit.Builder {
         return Retrofit.Builder()
-            .baseUrl("")
-            .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create())
+            .baseUrl(baseUrl)
+            .addCallAdapterFactory(CoroutinesCallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
     }
 }

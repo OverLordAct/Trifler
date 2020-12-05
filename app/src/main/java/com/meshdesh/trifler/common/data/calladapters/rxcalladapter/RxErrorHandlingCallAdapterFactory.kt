@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.common.data.calladapters
+package com.meshdesh.trifler.common.data.calladapters.rxcalladapter
 
 import com.meshdesh.trifler.common.exception.RetrofitException
 import io.reactivex.Completable
