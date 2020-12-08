@@ -3,34 +3,27 @@ package com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.IOException
 import com.meshdesh.trifler.common.data.entity.Result
+import okhttp3.ResponseBody
+import retrofit2.Converter
+import java.lang.reflect.Type
 
-class ResultCall<T>(proxy: Call<T>) : CallDelegate<T, Result<T>>(proxy) {
-    override fun cloneImpl(): Call<Result<T>> = ResultCall(proxy.clone())
+class ResultCall<Success: Any, Failure: Any>(
+    private val backingCall: Call<Success>,
+    private val errorConverter: Converter<ResponseBody, Failure>,
+    private val successBodyType: Type
+): CallDelegate<Success, Failure>(backingCall) {
+    override fun cloneImpl(): Call<Result<Success, Failure>> = ResultCall(proxy.clone(), errorConverter, successBodyType)
 
-    override fun enqueueImpl(callback: Callback<Result<T>>) = proxy.enqueue(object : Callback<T> {
-        override fun onResponse(call: Call<T>, response: Response<T>) {
-            val code = response.code()
-            val result = if (code in 200 until 300) {
-                val body = response.body()
-                Result.Success(body)
-            } else {
-                Result.Failure(code)
-            }
-
-            callback.onResponse(this@ResultCall, Response.success(result))
+    override fun enqueueImpl(callback: Callback<Result<Success, Failure>>) = backingCall.enqueue(object : Callback<Success> {
+        override fun onResponse(call: Call<Success>, response: Response<Success>) {
+            val networkResponse = ResponseHandler.handle(response, successBodyType, errorConverter)
+            callback.onResponse(this@ResultCall, Response.success(networkResponse))
         }
 
-        override fun onFailure(call: Call<T>, t: Throwable) {
-            // Can handle error here
-            val result = if (t is IOException) {
-                Result.NetworkError
-            } else {
-                Result.Failure(null)
-            }
-
-            callback.onResponse(this@ResultCall, Response.success(result))
+        override fun onFailure(call: Call<Success>, t: Throwable) {
+            val networkResponse = t.extractNetworkResponse<Success, Failure>(errorConverter)
+            callback.onResponse(this@ResultCall, Response.success(networkResponse))
         }
     })
 }

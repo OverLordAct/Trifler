@@ -15,7 +15,7 @@ class TokenAuthenticator @Inject constructor(
         val updatedToken = "ABC"
 
         return updatedToken?.let {
-            response.request().newBuilder()
+            response.request.newBuilder()
                 .header("Authorization", it)
                 .build()
         }

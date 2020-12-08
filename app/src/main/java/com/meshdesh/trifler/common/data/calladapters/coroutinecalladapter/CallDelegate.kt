@@ -1,21 +1,23 @@
 package com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter
 
+import com.meshdesh.trifler.common.data.entity.Result
 import okhttp3.Request
 import okio.Timeout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-abstract class CallDelegate<Tin, Tout>(
-    protected val proxy: Call<Tin>
-) : Call<Tout> {
+abstract class CallDelegate<Success, Failure>(
+    protected val proxy: Call<Success>
+) : Call<Result<Success, Failure>> {
 
     override fun cancel() = proxy.cancel()
-    override fun clone(): Call<Tout> = cloneImpl()
 
-    final override fun enqueue(callback: Callback<Tout>) = enqueueImpl(callback)
+    override fun clone(): Call<Result<Success, Failure>> = cloneImpl()
 
-    override fun execute(): Response<Tout> = throw NotImplementedError()
+    final override fun enqueue(callback: Callback<Result<Success, Failure>>) = enqueueImpl(callback)
+
+    override fun execute(): Response<Result<Success, Failure>> = throw NotImplementedError()
 
     override fun isCanceled(): Boolean = proxy.isCanceled
 
@@ -25,6 +27,7 @@ abstract class CallDelegate<Tin, Tout>(
 
     override fun timeout(): Timeout = proxy.timeout()
 
-    abstract fun cloneImpl(): Call<Tout>
-    abstract fun enqueueImpl(callback: Callback<Tout>)
+    abstract fun cloneImpl(): Call<Result<Success, Failure>>
+
+    abstract fun enqueueImpl(callback: Callback<Result<Success, Failure>>)
 }

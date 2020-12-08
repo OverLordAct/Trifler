@@ -15,8 +15,11 @@
     <string name="login_password_field">Password</string>
     <string name="or">OR</string>
     <string name="login_redirect_button">Sign up</string>
+    <string name="email_blank">Email cannot be blank</string>
+    <string name="password_blank">Password cannot be blank</string>
+    <string name="login_failure">Unable to Login, Please Try Again</string>
 
-<!--    Sign up-->
+    <!--    Sign up-->
     <string name="create_account">Create Account</string>
     <string name="signup_primary_text">Already have an account?</string>
     <string name="signup_redirect_text">Sign in</string>

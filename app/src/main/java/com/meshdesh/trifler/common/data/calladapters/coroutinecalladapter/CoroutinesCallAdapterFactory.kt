@@ -1,11 +1,13 @@
 package com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter
 
+import com.meshdesh.trifler.common.data.entity.Result
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.CallAdapter
+import retrofit2.Converter
 import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
-import com.meshdesh.trifler.common.data.entity.Result
 
 class CoroutinesCallAdapterFactory private constructor() : CallAdapter.Factory() {
     companion object {
@@ -18,25 +20,32 @@ class CoroutinesCallAdapterFactory private constructor() : CallAdapter.Factory()
         returnType: Type,
         annotations: Array<Annotation>,
         retrofit: Retrofit
-    ): CallAdapter<*, *> = when (getRawType(returnType)) {
-        Call::class.java -> {
-            val callType = getParameterUpperBound(0, returnType as ParameterizedType)
-            when (getRawType(callType)) {
-                Result::class.java -> {
-                    val resultType = getParameterUpperBound(0, callType as ParameterizedType)
-                    ResultAdapter(resultType)
-                }
-                else -> throw Exception("Response type must be parameterized as Result<T>")
+    ): CallAdapter<*, *>? {
+        return when (getRawType(returnType)) {
+            Call::class.java -> {
+                val containerType = getParameterUpperBound(0, returnType as ParameterizedType)
+                check(containerType is ParameterizedType) { "Return type must be parameterized as Result<Success, Failure>" }
+
+                val successType = getParameterUpperBound(0, containerType)
+                val errorType = getParameterUpperBound(1, containerType)
+
+                val errorConverter =
+                    retrofit.nextResponseBodyConverter<Any>(null, errorType, annotations)
+
+                ResultCallAdapter<Any, Any>(successType, errorConverter)
             }
+            else -> null
         }
-        else -> throw Exception("Return type must be parameterized as Call<T>")
     }
 
-    private class ResultAdapter(
-        private val type: Type
-    ) : CallAdapter<Type, Call<Result<Type>>> {
-        override fun responseType(): Type = type
+    private class ResultCallAdapter<Success : Any, Failure : Any>(
+        private val type: Type,
+        private val errorConverter: Converter<ResponseBody, Failure>
+    ) : CallAdapter<Success, Call<Result<Success, Failure>>> {
+        override fun responseType() = type
 
-        override fun adapt(call: Call<Type>): Call<Result<Type>> = ResultCall(call)
+        override fun adapt(call: Call<Success>): Call<Result<Success, Failure>> {
+            return ResultCall(call, errorConverter, type)
+        }
     }
 }
