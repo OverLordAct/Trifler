@@ -54,5 +54,7 @@ class LocalStorage @Inject constructor(
 enum class KEY {
     CREDENTIALS,
     TOKEN,
-    ONBOARDING
+    ONBOARDING,
+    USERNAME,
+    EMAIL
 }

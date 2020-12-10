@@ -32,6 +32,7 @@
             android:hint="@string/login_email_field"
             app:endIconMode="clear_text"
             app:endIconTint="@color/nobel"
+            app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header">
@@ -54,6 +55,7 @@
             android:hint="@string/login_password_field"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/nobel"
+            app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="@id/emailContainer"
             app:layout_constraintStart_toStartOf="@id/emailContainer"
             app:layout_constraintTop_toBottomOf="@id/emailContainer">
@@ -104,6 +106,17 @@
             app:layout_constraintEnd_toEndOf="@id/emailContainer"
             app:layout_constraintStart_toStartOf="@id/emailContainer"
             app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

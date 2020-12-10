@@ -1,21 +1,32 @@
 package com.meshdesh.trifler.signup.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.login.view.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_signup.*
 
 @AndroidEntryPoint
 class SignupActivity : AppCompatActivity() {
+
+    companion object {
+        fun getInstance(context: Context) = Intent(context, SignupActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
         setTermsAndConditions()
+        setHeader()
     }
 
     private fun setTermsAndConditions() {
@@ -34,5 +45,14 @@ class SignupActivity : AppCompatActivity() {
         )
 
         termsCheckbox.text = spannableString
+    }
+
+    private fun setHeader() {
+        header.setButtonClickListener {
+            startActivity(LoginActivity.getInstance(this))
+        }
+        header.setSecondaryButtonClickListener {
+            startActivity(LoginActivity.getInstance(this))
+        }
     }
 }

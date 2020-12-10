@@ -50,7 +50,7 @@ class SigninUpHeader(
         }
     }
 
-    fun secondaryButtonClickListener(listener: (() -> Unit)) {
+    fun setSecondaryButtonClickListener(listener: (() -> Unit)) {
         secondaryButtonClicked = listener
         subtitle_secondary.setOnClickListener {
             secondaryButtonClicked?.invoke()

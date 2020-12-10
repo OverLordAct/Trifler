@@ -22,6 +22,7 @@
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorPrimary
         </item>
+        <item name="android:indeterminateTint">@color/radicalred</item>
     </style>
 
     <style name="ButtonBaseStyle" parent="Widget.MaterialComponents.Button">

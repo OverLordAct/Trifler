@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.meshdesh.trifler">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".TriflerApplication"
         android:allowBackup="true"
@@ -10,7 +12,7 @@
         android:roundIcon="@drawable/main_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trifler">
-        <activity android:name=".signup.view.SignupActivity"></activity>
+        <activity android:name=".signup.view.SignupActivity" />
         <activity android:name=".login.view.LoginActivity" />
         <activity
             android:name=".splash.view.SplashActivity"
