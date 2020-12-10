@@ -1,7 +1,9 @@
 package com.meshdesh.trifler.login.view
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
+
+    companion object {
+        fun getInstance(context: Context) = Intent(context, LoginActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        }
+    }
 
     private val viewModel: LoginViewModelImpl by viewModels()
 
@@ -30,29 +38,30 @@ class LoginActivity : AppCompatActivity() {
     private fun loginStatusUpdate(loginStatus: LoginViewModel.LoginStatus) {
         when (loginStatus) {
             is LoginViewModel.LoginStatus.Loading -> {
-                // TODO Add leading animation
+                progress.visibility = View.VISIBLE
             }
 
             is LoginViewModel.LoginStatus.Success -> {
-                // TODO Stop loading animation
+                // TODO Redirect
+                progress.visibility = View.GONE
                 Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show()
             }
 
             is LoginViewModel.LoginStatus.Failure -> {
-                // TODO Stop loading animation
+                progress.visibility = View.GONE
                 Toast.makeText(this, loginStatus.message, Toast.LENGTH_SHORT).show()
             }
 
             is LoginViewModel.LoginStatus.Blank.Email -> {
-                // TODO Stop loading animation
+                progress.visibility = View.GONE
                 emailContainer.error = loginStatus.message
             }
             is LoginViewModel.LoginStatus.Blank.Password -> {
-                // TODO Stop loading animation
+                progress.visibility = View.GONE
                 passwordContainer.error = loginStatus.message
             }
             is LoginViewModel.LoginStatus.Blank.Both -> {
-                // TODO Stop loading animation
+                progress.visibility = View.GONE
                 emailContainer.error = loginStatus.email
                 passwordContainer.error = loginStatus.password
             }
@@ -61,8 +70,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setHeader() {
         header.setButtonClickListener {
-            startActivity(Intent(this, SignupActivity::class.java))
-            finish()
+            startActivity(SignupActivity.getInstance(this))
+        }
+        header.setSecondaryButtonClickListener {
+            startActivity(SignupActivity.getInstance(this))
         }
     }
 
