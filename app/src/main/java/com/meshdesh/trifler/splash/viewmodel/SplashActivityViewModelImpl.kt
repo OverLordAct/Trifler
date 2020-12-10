@@ -23,8 +23,8 @@ class SplashActivityViewModelImpl @ViewModelInject constructor(
                 accountManager.userName ?: ""
             )
         } else {
-            if (featureManager.isNew) {
-                featureManager.setIsNew()
+            if (featureManager.isFirstTime) {
+                featureManager.setFirstTimeDone()
                 accountStatus.value = SplashActivityViewModel.AccountStatus.Unauthenticated(true)
             } else {
                 accountStatus.value = SplashActivityViewModel.AccountStatus.Unauthenticated(false)

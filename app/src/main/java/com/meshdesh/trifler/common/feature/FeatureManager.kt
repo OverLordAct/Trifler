@@ -10,10 +10,10 @@ class FeatureManager @Inject constructor(
     private val localStorage: LocalStorage
 ) {
 
-    val isNew: Boolean
-        get() = localStorage.get(KEY.ONBOARDING, false) ?: true
+    val isFirstTime: Boolean
+        get() = localStorage[KEY.ONBOARDING] ?: true
 
-    fun setIsNew() {
-        localStorage.set(KEY.ONBOARDING, false)
+    fun setFirstTimeDone() {
+        localStorage[KEY.ONBOARDING] = false
     }
 }
