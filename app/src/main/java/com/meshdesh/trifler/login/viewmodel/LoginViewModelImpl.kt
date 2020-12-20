@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.common.account.AccountManager
 import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.localize.Localize
+import com.meshdesh.trifler.common.storage.account.AccountManager
 import com.meshdesh.trifler.login.data.entity.LoginRequest
 import com.meshdesh.trifler.login.data.entity.LoginResponse
 import com.meshdesh.trifler.login.data.repository.LoginRepository
@@ -46,8 +46,7 @@ class LoginViewModelImpl @ViewModelInject constructor(
                             data?.user?.name?.let {
                                 accountManager.login(
                                     it,
-                                    data.user.email,
-                                    "Sample Token"
+                                    data.user.email
                                 )
                             }
                             loginStatusLiveData.value = LoginStatus.Success

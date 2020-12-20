@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.common.data
+package com.meshdesh.trifler.common.data.entity
 
 data class Credentials(
     val username: String,

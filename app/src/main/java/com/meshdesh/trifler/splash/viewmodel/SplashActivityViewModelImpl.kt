@@ -3,8 +3,8 @@ package com.meshdesh.trifler.splash.viewmodel
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.meshdesh.trifler.common.account.AccountManager
 import com.meshdesh.trifler.common.feature.FeatureManager
+import com.meshdesh.trifler.common.storage.account.AccountManager
 
 class SplashActivityViewModelImpl @ViewModelInject constructor(
     private val accountManager: AccountManager,
