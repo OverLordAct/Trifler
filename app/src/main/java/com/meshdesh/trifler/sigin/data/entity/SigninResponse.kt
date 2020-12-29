@@ -2,12 +2,12 @@ package com.meshdesh.trifler.sigin.data.entity
 
 import com.google.gson.annotations.SerializedName
 
-sealed class LoginResponse {
+sealed class SigninResponse {
     data class Success(
         @SerializedName("status") val status: String,
         @SerializedName("message") val message: String,
         @SerializedName("data") val user: User
-    ) {
+    ) : SigninResponse() {
         data class User(
             @SerializedName("password") private val password: String,
             @SerializedName("email") val email: String,
@@ -20,5 +20,5 @@ sealed class LoginResponse {
     data class Failure(
         val status: String,
         val message: String
-    )
+    ) : SigninResponse()
 }

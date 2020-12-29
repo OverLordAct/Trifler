@@ -27,8 +27,15 @@
     <string name="signup_first_name">First Name</string>
     <string name="signup_last_name">Last Name</string>
     <string name="signup_email">Email</string>
+    <string name="signup_password">Password</string>
     <string name="signup_terms_and_conditions"><![CDATA[I agree to Term & Condition and Privacy Policy]]></string>
     <string name="signup_updated">Keep me updated with new versions</string>
     <string name="signup_primary_button">Sign up with email</string>
     <string name="signup_secondary_button">Sign up with Google</string>
+    <string name="signup_firstname_blank">First Name cannot be empty</string>
+    <string name="signup_lastname_blank">Last Name cannot be empty</string>
+    <string name="signup_email_blank">Email cannot be empty</string>
+    <string name="signup_password_blank">Password cannot be empty</string>
+    <string name="signup_failure">Unable to Signup, Please Try Again</string>
+    <string name="signup_termsandconditions_unchecked">Terms and conditions not checked</string>
 </resources>

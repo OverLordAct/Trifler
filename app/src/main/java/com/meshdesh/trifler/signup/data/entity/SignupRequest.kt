@@ -1,8 +1,9 @@
-package com.meshdesh.trifler.sigin.data.entity
+package com.meshdesh.trifler.signup.data.entity
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginRequest(
+data class SignupRequest(
+    @SerializedName("name") private val name: String,
     @SerializedName("email") private val email: String,
     @SerializedName("password") private val password: String
 )
