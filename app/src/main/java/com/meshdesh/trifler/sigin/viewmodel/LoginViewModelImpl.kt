@@ -1,17 +1,18 @@
-package com.meshdesh.trifler.login.viewmodel
+package com.meshdesh.trifler.sigin.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.common.account.AccountManager
 import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.localize.Localize
-import com.meshdesh.trifler.login.data.entity.LoginRequest
-import com.meshdesh.trifler.login.data.entity.LoginResponse
-import com.meshdesh.trifler.login.data.repository.LoginRepository
-import com.meshdesh.trifler.login.viewmodel.LoginViewModel.LoginStatus
+import com.meshdesh.trifler.common.storage.account.AccountManager
+import com.meshdesh.trifler.common.storage.token.TokenManager
+import com.meshdesh.trifler.sigin.data.entity.LoginRequest
+import com.meshdesh.trifler.sigin.data.entity.LoginResponse
+import com.meshdesh.trifler.sigin.data.repository.LoginRepository
+import com.meshdesh.trifler.sigin.viewmodel.LoginViewModel.LoginStatus
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -19,7 +20,8 @@ import kotlinx.coroutines.withContext
 class LoginViewModelImpl @ViewModelInject constructor(
     private val loginRepository: LoginRepository,
     private val localize: Localize,
-    private val accountManager: AccountManager
+    private val accountManager: AccountManager,
+    private val tokenManager: TokenManager
 ) : ViewModel(), LoginViewModel {
 
     override var loginStatusLiveData: MutableLiveData<LoginStatus> =
@@ -42,13 +44,13 @@ class LoginViewModelImpl @ViewModelInject constructor(
                         is Result.Success -> {
                             val data =
                                 (login as Result.Success<LoginResponse.Success>).data
-                            // TODO Set token once logged in
-                            data?.user?.name?.let {
+                            data?.let {
                                 accountManager.login(
-                                    it,
-                                    data.user.email,
-                                    "Sample Token"
+                                    it.user.name,
+                                    it.user.email
                                 )
+                                tokenManager.setRefreshToken(it.user.refreshToken)
+                                tokenManager.setAccessToken(it.user.accessToken)
                             }
                             loginStatusLiveData.value = LoginStatus.Success
                         }

@@ -8,7 +8,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.login.view.LoginActivity
+import com.meshdesh.trifler.sigin.view.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_signup.*
 

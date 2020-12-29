@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.common.account
+package com.meshdesh.trifler.common.storage.account
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -52,9 +52,9 @@ class LocalStorage @Inject constructor(
 }
 
 enum class KEY {
-    CREDENTIALS,
-    TOKEN,
     ONBOARDING,
     USERNAME,
-    EMAIL
+    EMAIL,
+    ACCESS_TOKEN,
+    REFRESH_TOKEN
 }
