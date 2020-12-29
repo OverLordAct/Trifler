@@ -36,6 +36,6 @@
     <string name="signup_lastname_blank">Last Name cannot be empty</string>
     <string name="signup_email_blank">Email cannot be empty</string>
     <string name="signup_password_blank">Password cannot be empty</string>
-    <string name="signup_failure">Unable to Login, Please Try Again</string>
+    <string name="signup_failure">Unable to Signup, Please Try Again</string>
     <string name="signup_termsandconditions_unchecked">Terms and conditions not checked</string>
 </resources>
