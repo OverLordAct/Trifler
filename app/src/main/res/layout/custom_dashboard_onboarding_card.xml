@@ -20,7 +20,7 @@
             android:id="@+id/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/T28RadicalRedMedium"
+            android:textAppearance="@style/T28RadicalRedBold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Add Contact" />

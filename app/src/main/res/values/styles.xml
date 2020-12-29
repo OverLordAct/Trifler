@@ -40,7 +40,7 @@
         <item name="android:textSize">32sp</item>
     </style>
 
-    <style name="T28RadicalRedMedium" parent="TextDimGrayMedium">
+    <style name="T28RadicalRedBold" parent="TextDimGrayMedium">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/radicalred</item>
@@ -62,6 +62,24 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/radicalred</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T20WhiteSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T28WhiteSemiBold">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T18WhiteSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
     <style name="RoundedBaseButton">

@@ -11,5 +11,9 @@
     <dimen name="module_15">15dp</dimen>
     <dimen name="module_43">43dp</dimen>
     <dimen name="module_50">50dp</dimen>
+    <dimen name="module_23">23dp</dimen>
+    <dimen name="module_29">29dp</dimen>
+    <dimen name="module_40">40dp</dimen>
+    <dimen name="module_35">35dp</dimen>
     <item name="module_0_3" format="float" type="dimen">0.3dp</item>
 </resources>

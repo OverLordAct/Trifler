@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/radicalred"
+    android:elevation="@dimen/module_5"
+    app:cardCornerRadius="@dimen/module_5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/module_23"
+        android:paddingBottom="@dimen/module_29">
+
+        <TextView
+            android:id="@+id/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/module_20"
+            android:textAppearance="@style/T28WhiteSemiBold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Personal" />
+
+        <TextView
+            android:id="@+id/secondaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/T18WhiteSemiBold"
+            app:layout_constraintStart_toStartOf="@id/mainText"
+            app:layout_constraintTop_toBottomOf="@id/mainText"
+            tools:text="5 contacts" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="@dimen/module_40"
+            android:layout_height="@dimen/module_35"
+            android:layout_marginEnd="@dimen/module_40"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@id/secondaryText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mainText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

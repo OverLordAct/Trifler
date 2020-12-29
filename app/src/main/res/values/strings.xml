@@ -46,4 +46,5 @@
     <string name="onboarding_dashboardcard_body_one">You can add an email or mobile number as temporary.</string>
     <string name="onboarding_dashboardcard_header_two">Make new categories</string>
     <string name="onboarding_dashboardcard_body_two">Create new categories for your contacts and access them.</string>
+    <string name="onboarded_dashboardcard_primary">I want to..</string>
 </resources>
