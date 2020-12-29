@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="TextDimGrayMedium">
+        <item name="android:textColor">@color/dimgray</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="TextRadicalRedBold">
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="T16NobelNormal">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/nobel</item>
+    </style>
+
     <style name="T20CharcoalBold">
         <item name="android:textSize">20sp</item>s
         <item name="android:textColor">@color/charcoal</item>
@@ -20,20 +36,20 @@
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="TextDimGrayMedium">
-        <item name="android:textColor">@color/dimgray</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
+    <style name="T32RadicalRedBold" parent="TextRadicalRedBold">
+        <item name="android:textSize">32sp</item>
     </style>
 
-    <style name="T32RedBold">
+    <style name="T28RadicalRedMedium" parent="TextDimGrayMedium">
         <item name="android:fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="T16Nobel">
-        <item name="android:textSize">16sp</item>
+    <style name="T16DarkGrayNormal">
         <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/darkgray</item>
     </style>
 
     <style name="RoundedBaseButton">
@@ -88,9 +104,10 @@
         <item name="android:textColorHint">@color/radicalred</item>
     </style>
 
-<!--    For outlined edit text layour with custom font-->
+    <!--    For outlined edit text layour with custom font-->
     <style name="TextInputLayout.OutlineBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont</item>
+        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont
+        </item>
     </style>
 
     <style name="ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
@@ -101,7 +118,7 @@
         <item name="android:fontFamily">@font/poppins</item>
     </style>
 
-<!--     For filled edit text with custom font-->
+    <!--     For filled edit text with custom font-->
     <style name="TextInputLayout.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:theme">@style/ThemeOverlay.TextInputEditText.FilledBox.CustomFont</item>
         <item name="android:textColorHint">@color/nobel</item>
@@ -121,30 +138,30 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-<!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
-<!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
-<!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
-<!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
-<!--    </style>-->
+    <!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
+    <!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
+    <!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
+    <!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
-<!--        <item name="android:fontFamily">@font/poppins</item>-->
-<!--    </style>-->
+    <!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
+    <!--        <item name="android:fontFamily">@font/poppins</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
-<!--        <item name="android:fontFamily">@font/poppins</item>-->
-<!--    </style>-->
+    <!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
+    <!--        <item name="android:fontFamily">@font/poppins</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
-<!--        <item name="android:fontFamily">@font/poppins</item>-->
-<!--    </style>-->
+    <!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
+    <!--        <item name="android:fontFamily">@font/poppins</item>-->
+    <!--    </style>-->
 
-<!--    Checkbox-->
+    <!--    Checkbox-->
     <style name="Checkbox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
         <item name="colorOnSurface">@color/whitesmoke</item>
         <item name="colorOnSecondary">@color/whitesmoke</item>
         <item name="buttonTint">@color/silver</item>
-        <item name="android:textAppearance">@style/T16Nobel</item>
+        <item name="android:textAppearance">@style/T16NobelNormal</item>
         <item name="android:textColor">@color/nobel</item>
     </style>
 </resources>
