@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/main_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trifler">
+        <activity android:name=".dashboard.view.DashboardActivity"></activity>
         <activity
             android:name=".signup.view.SignupActivity"
             android:screenOrientation="portrait" />

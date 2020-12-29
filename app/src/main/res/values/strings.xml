@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Trifler</string>
 
-<!--    Onboarding-->
+    <!--    Onboarding-->
     <string name="oboarding_skip_button">Skip</string>
     <string name="onboarding_get_started_button">Get Started</string>
 
-<!--    Login in-->
+    <!--    Login in-->
     <string name="login_primary_button">Sign in</string>
     <string name="login_secondary_button">Sign in with Google</string>
     <string name="login_title">Welcome Back</string>
