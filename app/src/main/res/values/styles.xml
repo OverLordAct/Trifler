@@ -46,10 +46,10 @@
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="T16DarkGrayNormal">
+    <style name="T16RaineeNormal">
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/darkgray</item>
+        <item name="android:textColor">@color/rainee</item>
     </style>
 
     <style name="RoundedBaseButton">

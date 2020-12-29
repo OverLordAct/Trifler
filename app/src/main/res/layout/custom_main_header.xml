@@ -19,7 +19,8 @@
         android:id="@+id/avatarIcon"
         android:layout_width="@dimen/module_53"
         android:layout_height="@dimen/module_53"
-        android:background="@color/verylightgrey"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/darkgray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +29,7 @@
         android:layout_width="@dimen/module_53"
         android:layout_height="@dimen/module_53"
         android:layout_marginEnd="@dimen/module_20"
-        android:background="@color/radicalred"
+        android:background="@drawable/circle"
         app:layout_constraintEnd_toStartOf="@id/avatarIcon"
         app:layout_constraintTop_toTopOf="parent" />
 

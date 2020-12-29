@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="SigninUpHeader">
-        <attr name="buttonText" format="string"/>
-        <attr name="titleText" format="string"/>
-        <attr name="subtitlePrimaryText" format="string"/>
-        <attr name="subtitleSecondaryText" format="string"/>
+        <attr name="buttonText" format="string" />
+        <attr name="titleText" format="string" />
+        <attr name="subtitlePrimaryText" format="string" />
+        <attr name="subtitleSecondaryText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="OnboardingCard">
+        <attr name="headerText" format="string" />
+        <attr name="bodyText" format="string" />
     </declare-styleable>
 </resources>

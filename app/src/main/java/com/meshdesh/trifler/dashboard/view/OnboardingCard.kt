@@ -15,6 +15,12 @@ class OnboardingCard(
 
     init {
         inflate(context, R.layout.custom_dashboard_onboarding_card, this)
+
+        context.obtainStyledAttributes(attributeSet, R.styleable.OnboardingCard).apply {
+            setHeaderText(getString(R.styleable.OnboardingCard_headerText).toString())
+            setBodyText(getString(R.styleable.OnboardingCard_bodyText).toString())
+            recycle()
+        }
     }
 
     fun setHeaderText(text: String) {
