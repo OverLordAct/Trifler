@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.login.view
+package com.meshdesh.trifler.sigin.view
 
 import android.content.Context
 import android.content.Intent
@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.login.viewmodel.LoginViewModel
-import com.meshdesh.trifler.login.viewmodel.LoginViewModelImpl
+import com.meshdesh.trifler.sigin.viewmodel.LoginViewModel
+import com.meshdesh.trifler.sigin.viewmodel.LoginViewModelImpl
 import com.meshdesh.trifler.signup.view.SignupActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_login.*

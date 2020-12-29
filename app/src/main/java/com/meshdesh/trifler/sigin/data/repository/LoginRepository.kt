@@ -1,9 +1,9 @@
-package com.meshdesh.trifler.login.data.repository
+package com.meshdesh.trifler.sigin.data.repository
 
 import com.meshdesh.trifler.common.data.api.TriflerAPI
 import com.meshdesh.trifler.common.data.entity.Result
-import com.meshdesh.trifler.login.data.entity.LoginRequest
-import com.meshdesh.trifler.login.data.entity.LoginResponse
+import com.meshdesh.trifler.sigin.data.entity.LoginRequest
+import com.meshdesh.trifler.sigin.data.entity.LoginResponse
 import javax.inject.Inject
 
 class LoginRepository @Inject constructor(

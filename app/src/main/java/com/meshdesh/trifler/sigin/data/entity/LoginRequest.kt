@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.login.data.entity
+package com.meshdesh.trifler.sigin.data.entity
 
 import com.google.gson.annotations.SerializedName
 

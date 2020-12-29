@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.login.view.LoginActivity
 import com.meshdesh.trifler.onboarding.view.OnboardingActivity
+import com.meshdesh.trifler.sigin.view.LoginActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModelImpl
 import dagger.hilt.android.AndroidEntryPoint

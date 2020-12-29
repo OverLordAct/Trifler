@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.login.viewmodel
+package com.meshdesh.trifler.sigin.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 
