@@ -38,4 +38,12 @@
     <string name="signup_password_blank">Password cannot be empty</string>
     <string name="signup_failure">Unable to Signup, Please Try Again</string>
     <string name="signup_termsandconditions_unchecked">Terms and conditions not checked</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome</string>
+    <string name="onboarding_dashboard_heading">How would like to start?</string>
+    <string name="onboarding_dashboardcard_header_one">Add Contact</string>
+    <string name="onboarding_dashboardcard_body_one">You can add an email or mobile number as temporary.</string>
+    <string name="onboarding_dashboardcard_header_two">Make new categories</string>
+    <string name="onboarding_dashboardcard_body_two">Create new categories for your contacts and access them.</string>
 </resources>

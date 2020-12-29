@@ -9,5 +9,7 @@
     <dimen name="module_53">53dp</dimen>
     <dimen name="module_20">20dp</dimen>
     <dimen name="module_15">15dp</dimen>
+    <dimen name="module_43">43dp</dimen>
+    <dimen name="module_50">50dp</dimen>
     <item name="module_0_3" format="float" type="dimen">0.3dp</item>
 </resources>
