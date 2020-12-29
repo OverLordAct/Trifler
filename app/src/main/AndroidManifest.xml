@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.meshdesh.trifler">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".TriflerApplication"
@@ -12,8 +12,12 @@
         android:roundIcon="@drawable/main_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Trifler">
-        <activity android:name=".signup.view.SignupActivity" />
-        <activity android:name=".sigin.view.LoginActivity" />
+        <activity
+            android:name=".signup.view.SignupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".sigin.view.SigninActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".splash.view.SplashActivity"
             android:screenOrientation="portrait">
@@ -23,7 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".onboarding.view.OnboardingActivity"
             android:screenOrientation="portrait" />

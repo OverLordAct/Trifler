@@ -1,10 +1,8 @@
-package com.meshdesh.trifler.common.di.module
+package com.meshdesh.trifler.common.di.module.app
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.meshdesh.trifler.common.auth.AccessTokenAuthenticator
-import com.meshdesh.trifler.common.auth.repository.TokenRepository
-import com.meshdesh.trifler.common.auth.repository.TokenRepositoryImpl
 import com.meshdesh.trifler.common.data.api.TokenAPI
 import com.meshdesh.trifler.common.data.api.TriflerAPI
 import com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter.CoroutinesCallAdapterFactory
@@ -28,8 +26,6 @@ import javax.inject.Singleton
 class AppModule {
 
     private val baseUrl = "https://trifler.herokuapp.com"
-
-    // TODO
 
     @Singleton
     @Provides
@@ -107,13 +103,5 @@ class AppModule {
     @Provides
     fun providesTokenManager(tokenManager: TokenManagerImpl): TokenManager {
         return tokenManager
-    }
-
-    @Singleton
-    @Provides
-    fun providesTokenRepository(
-        tokenRepository: TokenRepositoryImpl
-    ): TokenRepository {
-        return tokenRepository
     }
 }

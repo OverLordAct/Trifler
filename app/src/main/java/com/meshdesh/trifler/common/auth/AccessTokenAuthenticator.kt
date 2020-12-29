@@ -1,7 +1,7 @@
 package com.meshdesh.trifler.common.auth
 
 import com.meshdesh.trifler.common.auth.repository.TokenRepository
-import com.meshdesh.trifler.common.data.tag.AuthenticatedTag
+import com.meshdesh.trifler.common.data.tag.NoAuthenticationTag
 import okhttp3.Authenticator
 import okhttp3.Request
 import okhttp3.Response
@@ -53,7 +53,7 @@ class AccessTokenAuthenticator @Inject constructor(
 
     private fun checkAuthenticatedTag(response: Response): Boolean {
         response.request.tag(Invocation::class.java)?.let {
-            it.method().getAnnotation(AuthenticatedTag::class.java)?.let {
+            it.method().getAnnotation(NoAuthenticationTag::class.java)?.let {
                 return true
             }
         }
