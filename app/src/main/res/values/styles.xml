@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="TextDimGrayMedium">
         <item name="android:textColor">@color/dimgray</item>
@@ -70,6 +70,12 @@
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
+    <style name="T20RadicalRedSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
     <style name="T28WhiteSemiBold">
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/white</item>
@@ -106,6 +112,15 @@
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="OnboardedDashboardPrimaryButton" parent="RoundedBaseButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/module_15</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/module_20</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:background">@drawable/background_corner</item>
+        <item name="android:gravity">start</item>
     </style>
 
     <style name="dotsStyle">

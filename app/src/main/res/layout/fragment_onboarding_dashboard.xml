@@ -1,57 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".dashboard.view.OnboardingDashboardFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:background="@drawable/circle"
-        android:gravity="center"
-        android:text="@string/welcome"
-        android:textAppearance="@style/T24WhiteBold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/headingText"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/module_30"
-        android:layout_marginTop="@dimen/module_43"
-        android:text="@string/onboarding_dashboard_heading"
-        android:textAppearance="@style/T24RadicalRedSemiBold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+        tools:context=".dashboard.view.OnboardingDashboardFragment">
 
-    <com.meshdesh.trifler.dashboard.view.OnboardingCard
-        android:id="@+id/addContactCard"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/module_20"
-        app:bodyText="@string/onboarding_dashboardcard_body_one"
-        app:headerText="@string/onboarding_dashboardcard_header_one"
-        app:layout_constraintEnd_toEndOf="@id/headingText"
-        app:layout_constraintStart_toStartOf="@id/headingText"
-        app:layout_constraintTop_toBottomOf="@id/headingText" />
+        <com.meshdesh.trifler.common.customview.MainHeader
+            android:id="@+id/mainHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.meshdesh.trifler.dashboard.view.OnboardingCard
-        android:id="@+id/makeNewCategoriesCard"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/module_20"
-        android:layout_marginBottom="@dimen/module_50"
-        app:bodyText="@string/onboarding_dashboardcard_body_two"
-        app:headerText="@string/onboarding_dashboardcard_header_two"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/headingText"
-        app:layout_constraintStart_toStartOf="@id/headingText"
-        app:layout_constraintTop_toBottomOf="@id/addContactCard" />
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="@dimen/module_20"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textAppearance="@style/T24WhiteBold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainHeader" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/headingText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/module_30"
+            android:layout_marginTop="@dimen/module_43"
+            android:text="@string/onboarding_dashboard_heading"
+            android:textAppearance="@style/T24RadicalRedSemiBold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+
+        <com.meshdesh.trifler.dashboard.view.OnboardingCard
+            android:id="@+id/addContactCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/module_20"
+            app:bodyText="@string/onboarding_dashboardcard_body_one"
+            app:headerText="@string/onboarding_dashboardcard_header_one"
+            app:layout_constraintEnd_toEndOf="@id/headingText"
+            app:layout_constraintStart_toStartOf="@id/headingText"
+            app:layout_constraintTop_toBottomOf="@id/headingText" />
+
+        <com.meshdesh.trifler.dashboard.view.OnboardingCard
+            android:id="@+id/makeNewCategoriesCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/module_20"
+            android:layout_marginBottom="@dimen/module_50"
+            app:bodyText="@string/onboarding_dashboardcard_body_two"
+            app:headerText="@string/onboarding_dashboardcard_header_two"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/headingText"
+            app:layout_constraintStart_toStartOf="@id/headingText"
+            app:layout_constraintTop_toBottomOf="@id/addContactCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

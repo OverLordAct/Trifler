@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/module_15"
-        android:paddingVertical="@dimen/module_24">
+        android:paddingVertical="@dimen/module_20">
 
         <TextView
             android:id="@+id/headerText"
