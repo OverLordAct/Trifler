@@ -17,5 +17,5 @@
     <dimen name="module_35">35dp</dimen>
     <dimen name="module_45">45dp</dimen>
     <dimen name="module_10">10dp</dimen>
-    <item name="module_0_3" format="float" type="dimen">0.3dp</item>
+    <item name="module_0_3" format="float" type="dimen">0.3</item>
 </resources>
