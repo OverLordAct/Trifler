@@ -4,50 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:clipToPadding="false"
     tools:context=".dashboard.view.OnboardedDashboardFragment">
 
-    <com.meshdesh.trifler.common.customview.MainHeader
-        android:id="@+id/mainHeader"
+    <FrameLayout
+        android:id="@+id/overlayFrame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#E6FFFFFF"
+        android:elevation="@dimen/module_5"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/primaryButton"
-        style="@style/OnboardedDashboardPrimaryButton"
-        android:layout_width="0dp"
+    <include
+        android:id="@+id/primaryButtonLayout"
+        layout="@layout/custom_dashboard_onboarded_dropdown_primary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/module_40"
         android:layout_marginTop="@dimen/module_20"
-        android:drawableEnd="@drawable/ic_arrow_down"
-        android:elevation="@dimen/module_5"
-        android:paddingHorizontal="@dimen/module_20"
-        android:paddingVertical="@dimen/module_15"
-        android:text="@string/onboarded_dashboardcard_primary"
+        android:elevation="@dimen/module_10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainHeader" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/recyclerHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/module_45"
+        android:layout_marginTop="@dimen/module_100"
+        android:elevation="@dimen/module_1"
         android:text="@string/onboarded_dashboard_recycler_header"
         android:textAppearance="@style/T20RadicalRedSemiBold"
-        app:layout_constraintStart_toStartOf="@id/primaryButton"
-        app:layout_constraintTop_toBottomOf="@id/primaryButton" />
+        app:layout_constraintStart_toStartOf="@id/primaryButtonLayout"
+        app:layout_constraintTop_toTopOf="@id/primaryButtonLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/catergoryRecycler"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/module_10"
+        android:layout_marginHorizontal="@dimen/module_40"
+        android:layout_marginVertical="@dimen/module_15"
+        android:elevation="@dimen/module_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/primaryButton"
-        app:layout_constraintStart_toStartOf="@id/primaryButton"
-        app:layout_constraintTop_toBottomOf="@id/recyclerHeader" />
+        app:layout_constraintEnd_toEndOf="@id/primaryButtonLayout"
+        app:layout_constraintStart_toStartOf="@id/primaryButtonLayout"
+        app:layout_constraintTop_toBottomOf="@id/recyclerHeader"
+        tools:itemCount="10"
+        tools:listitem="@layout/custom_onboarded_category_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
