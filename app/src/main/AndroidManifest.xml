@@ -7,9 +7,9 @@
     <application
         android:name=".TriflerApplication"
         android:allowBackup="true"
-        android:icon="@drawable/main_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/main_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
         android:theme="@style/Theme.Trifler">
