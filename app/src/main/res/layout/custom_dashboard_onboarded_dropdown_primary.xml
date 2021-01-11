@@ -19,10 +19,12 @@
             style="@style/OnboardedDashboardPrimaryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_arrow_down"
             android:paddingHorizontal="@dimen/module_20"
             android:paddingVertical="@dimen/module_15"
             android:text="@string/onboarded_dashboardcard_primary"
+            app:icon="@drawable/arrow_down_up"
+            app:iconGravity="end"
+            app:iconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -51,4 +51,8 @@
     <string name="onboarded_dashboard_recycler_header">My categories</string>
     <string name="onboarded_dashboard_action_1">Search A Contact</string>
     <string name="onboarded_dashboard_action_2">Add A Contact</string>
+
+    <!-- Popup Menu -->
+    <string name="popup_dashboard">Dashboard</string>
+    <string name="popup_all_contacts">All Contacts</string>
 </resources>
