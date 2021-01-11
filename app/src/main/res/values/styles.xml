@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Text -->
+    <style name="TextDimGrayMedium">
+        <item name="android:textColor">@color/dimgray</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="TextRadicalRedBold">
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="T16NobelNormal">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/nobel</item>
+    </style>
 
     <style name="T20CharcoalBold">
         <item name="android:textSize">20sp</item>s
@@ -20,57 +37,99 @@
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="TextDimGrayMedium">
-        <item name="android:textColor">@color/dimgray</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
+    <style name="T32RadicalRedBold" parent="TextRadicalRedBold">
+        <item name="android:textSize">32sp</item>
     </style>
 
-    <style name="T32RedBold">
+    <style name="T28RadicalRedBold" parent="TextDimGrayMedium">
         <item name="android:fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="T16Nobel">
-        <item name="android:textSize">16sp</item>
+    <style name="T16RaineeNormal">
         <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/rainee</item>
     </style>
 
+    <style name="T24WhiteBold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="T24RadicalRedSemiBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T20WhiteSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T20RadicalRedSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T28WhiteSemiBold">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="T18WhiteSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <!-- Button -->
     <style name="RoundedBaseButton">
         <item name="cornerRadius">999dp</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="RoundedOutlinedBaseButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">999dp</item>
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:strokeWidth">1</item>
+        <item name="android:strokeColor">@color/radicalred</item>
     </style>
 
     <style name="OnboardingMainButton" parent="RoundedBaseButton">
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
-        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
     </style>
 
     <style name="RoundedFilledButton" parent="RoundedBaseButton">
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingTop">14dp</item>
-        <item name="android:paddingBottom">14dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
     <style name="SignInOutHeaderButton" parent="RoundedBaseButton">
         <item name="android:textSize">16sp</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">8dp</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
-    <style name="dotsStyle">
-        <item name="dotsColor">@color/radicalred</item>
-        <item name="dotsStrokeColor">@color/dimgray</item>
-        <item name="dotsCornerRadius">10dp</item>
-        <item name="dotsSize">12dp</item>
-        <item name="dotsSpacing">3dp</item>
-        <item name="dotsWidthFactor">2.5</item>
-        <item name="dotsStrokeWidth">2dp</item>
-        <item name="progressMode">true</item>
+    <style name="OnboardedDashboardPrimaryButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/module_15</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/module_20</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:backgroundTint">@color/radicalred</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">@dimen/module_5</item>
     </style>
 
     <style name="Widget.Button.Skip" parent="Widget.MaterialComponents.Button.OutlinedButton">
@@ -81,16 +140,30 @@
         <item name="strokeColor">@color/gainsboro</item>
     </style>
 
+    <style name="OnboardedDashboardAction1Button" parent="RoundedBaseButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Widget.ButtonOnboardedDashboardAction2" parent="RoundedOutlinedBaseButton">
+        <item name="strokeColor">@color/radicalred</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Edit Text -->
     <style name="HintTextAppearance" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColorHint">@color/radicalred</item>
     </style>
 
-<!--    For outlined edit text layour with custom font-->
+    <!--    For outlined edit text layout with custom font-->
     <style name="TextInputLayout.OutlineBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont</item>
+        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont
+        </item>
     </style>
 
     <style name="ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
@@ -101,7 +174,7 @@
         <item name="android:fontFamily">@font/poppins</item>
     </style>
 
-<!--     For filled edit text with custom font-->
+    <!--     For filled edit text with custom font-->
     <style name="TextInputLayout.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:theme">@style/ThemeOverlay.TextInputEditText.FilledBox.CustomFont</item>
         <item name="android:textColorHint">@color/nobel</item>
@@ -121,30 +194,55 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-<!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
-<!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
-<!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
-<!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
-<!--    </style>-->
+    <!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
+    <!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
+    <!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
+    <!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
-<!--        <item name="android:fontFamily">@font/poppins</item>-->
-<!--    </style>-->
+    <!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
+    <!--        <item name="android:fontFamily">@font/poppins</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
-<!--        <item name="android:fontFamily">@font/poppins</item>-->
-<!--    </style>-->
+    <!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
+    <!--        <item name="android:fontFamily">@font/poppins</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
-<!--        <item name="android:fontFamily">@font/poppins</item>-->
-<!--    </style>-->
+    <!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
+    <!--        <item name="android:fontFamily">@font/poppins</item>-->
+    <!--    </style>-->
 
-<!--    Checkbox-->
+    <!--    Checkbox-->
     <style name="Checkbox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
         <item name="colorOnSurface">@color/whitesmoke</item>
         <item name="colorOnSecondary">@color/whitesmoke</item>
         <item name="buttonTint">@color/silver</item>
-        <item name="android:textAppearance">@style/T16Nobel</item>
+        <item name="android:textAppearance">@style/T16NobelNormal</item>
         <item name="android:textColor">@color/nobel</item>
+    </style>
+
+    <!-- Cardview -->
+    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeBottomRight">10dp</item>
+    </style>
+
+    <!-- Dot Indicator -->
+    <style name="dotsStyle">
+        <item name="dotsColor">@color/radicalred</item>
+        <item name="dotsStrokeColor">@color/dimgray</item>
+        <item name="dotsCornerRadius">10dp</item>
+        <item name="dotsSize">12dp</item>
+        <item name="dotsSpacing">3dp</item>
+        <item name="dotsWidthFactor">2.5</item>
+        <item name="dotsStrokeWidth">2dp</item>
+        <item name="progressMode">true</item>
     </style>
 </resources>

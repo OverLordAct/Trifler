@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.dashboard.view.DashboardActivity
 import com.meshdesh.trifler.sigin.viewmodel.SigninViewModel
 import com.meshdesh.trifler.sigin.viewmodel.SigninViewModelImpl
 import com.meshdesh.trifler.signup.view.SignupActivity
@@ -46,6 +47,8 @@ class SigninActivity : AppCompatActivity() {
                 // TODO Redirect
                 progress.setGone()
                 Toast.makeText(this, signinStatus.message, Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, DashboardActivity::class.java))
+                finish()
             }
 
             is SigninViewModel.SigninStatus.Failure -> {
