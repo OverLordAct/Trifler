@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Customize your theme here. -->
-        <item name="colorOnSurface">@color/gainsboro</item>
+        <item name="colorOnSurface">@color/darkgray</item>
         <item name="materialButtonStyle">@style/ButtonBaseStyle</item>
     </style>
 
