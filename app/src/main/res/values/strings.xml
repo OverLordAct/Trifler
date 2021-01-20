@@ -55,4 +55,9 @@
     <!-- Popup Menu -->
     <string name="popup_dashboard">Dashboard</string>
     <string name="popup_all_contacts">All Contacts</string>
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_category">Category</string>
+    <string name="bottom_nav_speed_dial">Speed Dial</string>
+    <string name="bottom_nav_contacts">Contacts</string>
+    <string name="bottom_nav_profile">Profile</string>
 </resources>

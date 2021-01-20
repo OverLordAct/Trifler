@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_24"
+        android:title="@string/bottom_nav_home" />
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/category_24"
+        android:title="@string/bottom_nav_category" />
+    <item
+        android:id="@+id/speedDial"
+        android:icon="@drawable/call_24"
+        android:title="@string/bottom_nav_speed_dial" />
+    <item
+        android:id="@+id/contacts"
+        android:icon="@drawable/contacts_24"
+        android:title="@string/bottom_nav_contacts" />
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/person_24"
+        android:title="@string/bottom_nav_profile" />
+</menu>
