@@ -6,7 +6,9 @@ import com.meshdesh.trifler.common.auth.AccessTokenAuthenticator
 import com.meshdesh.trifler.common.data.api.TokenAPI
 import com.meshdesh.trifler.common.data.api.TriflerAPI
 import com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter.CoroutinesCallAdapterFactory
+import com.meshdesh.trifler.common.di.qualifier.CoroutinesAPI
 import com.meshdesh.trifler.common.di.qualifier.LoggingInterceptor
+import com.meshdesh.trifler.common.di.qualifier.NonCoroutinesAPI
 import com.meshdesh.trifler.common.di.qualifier.TokenInterceptor
 import com.meshdesh.trifler.common.storage.token.TokenManager
 import com.meshdesh.trifler.common.storage.token.TokenManagerImpl
@@ -38,7 +40,8 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun providesRetrofitBuilder(
+    @CoroutinesAPI
+    fun providesRetrofitBuilderWithCoroutines(
         okHttpClient: OkHttpClient
     ): Retrofit.Builder {
         return Retrofit.Builder()
@@ -50,14 +53,26 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun providesTriflerAPI(retrofit: Retrofit.Builder): TriflerAPI {
+    @NonCoroutinesAPI
+    fun providesRetrofitBuilderWithoutCoroutines(
+        okHttpClient: OkHttpClient
+    ): Retrofit.Builder {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+    }
+
+    @Singleton
+    @Provides
+    fun providesTriflerAPI(@CoroutinesAPI retrofit: Retrofit.Builder): TriflerAPI {
         return retrofit.build().create(TriflerAPI::class.java)
     }
 
     @Singleton
     @Provides
     fun providesTokenAPI(
-        retrofit: Retrofit.Builder
+        @NonCoroutinesAPI retrofit: Retrofit.Builder
     ): TokenAPI {
         return retrofit.build().create(TokenAPI::class.java)
     }

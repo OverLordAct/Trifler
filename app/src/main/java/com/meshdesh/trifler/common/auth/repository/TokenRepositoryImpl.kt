@@ -1,11 +1,8 @@
 package com.meshdesh.trifler.common.auth.repository
 
 import com.meshdesh.trifler.common.data.api.TokenAPI
-import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.storage.token.TokenManager
 import dagger.Lazy
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -22,36 +19,22 @@ class TokenRepositoryImpl @Inject constructor(
         return tokenManager.getRefreshToken()
     }
 
-    // TODO Resolve scope
     override fun refreshToken(): String? {
-        return runBlocking(IO) {
-            when (val newToken =
-                tokenManager.getRefreshToken()?.let { api.get().refreshToken(it) }) {
-                is Result.Success -> {
-                    val accessToken = newToken.data?.accessToken
-                    val refreshToken = newToken.data?.refreshToken
+        val call = tokenManager.getRefreshToken()?.let { api.get().refreshToken(it) }
+        return try {
+            val result = call?.execute()?.body()
 
-                    if (accessToken != null) {
-                        tokenManager.setAccessToken(accessToken)
-                    }
-
-                    if (refreshToken != null) {
-                        tokenManager.setRefreshToken(refreshToken)
-                    }
-                    return@runBlocking accessToken
-                }
-                // TODO Handle error correctly
-                is Result.NetworkError -> {
-                    return@runBlocking null
-                }
-                is Result.ServerError -> {
-                    return@runBlocking null
-                }
-                is Result.UnknownError -> {
-                    return@runBlocking null
-                }
-                else -> return@runBlocking null
+            result?.accessToken?.let {
+                tokenManager.setAccessToken(it)
             }
+            result?.refreshToken?.let {
+                tokenManager.setRefreshToken(it)
+            }
+
+            result?.accessToken
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
         }
     }
 }
