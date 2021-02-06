@@ -40,7 +40,7 @@
         android:layout_marginTop="@dimen/module_100"
         android:elevation="@dimen/module_1"
         android:text="@string/onboarded_dashboard_recycler_header"
-        android:textAppearance="@style/T20RadicalRedSemiBold"
+        android:textAppearance="@style/TextAppearance.Trifler.T20RadicalRedSemiBold"
         app:layout_constraintStart_toStartOf="@id/primaryButtonLayout"
         app:layout_constraintTop_toTopOf="@id/primaryButtonLayout" />
 

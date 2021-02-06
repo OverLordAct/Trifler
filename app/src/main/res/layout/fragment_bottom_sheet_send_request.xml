@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/module_20"
+        android:layout_marginEnd="@dimen/module_20"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/rainee" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/TextAppearance.Trifler.T20RadicalRedSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/module_20"
+        android:layout_marginTop="@dimen/module_10"
+        android:text="@string/contact_step_2_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeButton" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        style="@style/TextAppearance.Trifler.T14RaineeSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/module_20"
+        android:layout_marginEnd="@dimen/module_20"
+        android:text="@string/contact_step_2_subtitle"
+        app:layout_constraintBottom_toTopOf="@id/cta1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cta1"
+        style="@style/Widget.Trifler.Button.RoundedOutline.T18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/module_20"
+        android:layout_marginTop="@dimen/module_30"
+        android:layout_marginBottom="@dimen/module_30"
+        android:text="@string/contact_step_2_cta_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cta2"
+        style="@style/Widget.Trifler.Button.Rounded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/module_20"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:text="@string/contact_step_2_cta_2"
+        app:layout_constraintBottom_toBottomOf="@id/cta1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cta1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

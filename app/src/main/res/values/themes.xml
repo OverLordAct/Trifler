@@ -29,8 +29,6 @@
 
     <!-- Base Button Theme -->
     <style name="Widget.Trifler.ButtonBaseStyle" parent="Widget.MaterialComponents.Button">
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
         <item name="android:minHeight">0dp</item>
         <item name="textAllCaps">false</item>
         <item name="android:letterSpacing">0.0</item>

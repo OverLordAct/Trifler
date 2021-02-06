@@ -17,7 +17,7 @@
             android:id="@+id/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/T28RadicalRedBold"
+            android:textAppearance="@style/TextAppearance.Trifler.T28RadicalRedBold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Add Contact" />
@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="35dp"
-            android:textAppearance="@style/T16RaineeNormal"
+            android:textAppearance="@style/TextAppearance.Trifler.T16RaineeNormal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/headerText"
             app:layout_constraintTop_toBottomOf="@id/headerText"

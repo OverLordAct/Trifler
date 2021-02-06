@@ -34,7 +34,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/skipButton"
-        style="@style/Widget.Button.Skip"
+        style="@style/Widget.Trifler.Button.Skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -45,7 +45,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/getStarted"
-        style="@style/OnboardingMainButton"
+        style="@style/Widget.Trifler.Onboarding.Main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/module_58"

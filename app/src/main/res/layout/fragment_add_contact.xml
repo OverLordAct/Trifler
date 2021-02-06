@@ -8,7 +8,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/title"
-        style="@style/T24RadicalRedSemiBold"
+        style="@style/TextAppearance.Trifler.T24RadicalRedSemiBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/module_20"
@@ -21,7 +21,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/subtitle"
-        style="@style/T16NobelNormal"
+        style="@style/TextAppearance.Trifler.T16NobelNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contact_step_1_subtitle"
@@ -38,7 +38,7 @@
         android:layout_marginHorizontal="@dimen/module_30"
         android:layout_marginTop="@dimen/module_40"
         app:hintEnabled="false"
-        app:layout_constraintBottom_toTopOf="@id/submitButton"
+        app:layout_constraintBottom_toTopOf="@id/cta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtitle">
@@ -56,8 +56,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton"
-        style="@style/RoundedFilledButton"
+        android:id="@+id/cta"
+        style="@style/Widget.Trifler.Button.Rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/module_20"

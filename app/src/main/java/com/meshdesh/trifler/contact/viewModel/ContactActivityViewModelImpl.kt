@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.contact.view.viewModel
+package com.meshdesh.trifler.contact.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,9 +21,11 @@ class ContactActivityViewModelImpl @Inject constructor() : ViewModel(), ContactA
             is ContactActivityViewModel.CurrentStep.Step1 -> {
                 nextStepStatus.postValue(ContactActivityViewModel.CurrentStep.Step2)
             }
-
             is ContactActivityViewModel.CurrentStep.Step2 -> {
-                // Decide what to do on third step
+                nextStepStatus.postValue(ContactActivityViewModel.CurrentStep.Step3)
+            }
+            is ContactActivityViewModel.CurrentStep.Step3 -> {
+
             }
         }
     }
@@ -35,6 +37,9 @@ class ContactActivityViewModelImpl @Inject constructor() : ViewModel(), ContactA
             }
             is ContactActivityViewModel.CurrentStep.Step2 -> {
                 backStepStatus.postValue(ContactActivityViewModel.CurrentStep.Step2)
+            }
+            is ContactActivityViewModel.CurrentStep.Step3 -> {
+                backStepStatus.postValue(ContactActivityViewModel.CurrentStep.Step3)
             }
         }
     }

@@ -6,13 +6,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.meshdesh.trifler.R
-import com.meshdesh.trifler.contact.view.viewModel.ContactActivityViewModel
-import com.meshdesh.trifler.contact.view.viewModel.ContactActivityViewModelImpl
+import com.meshdesh.trifler.contact.viewModel.ContactActivityViewModel
+import com.meshdesh.trifler.contact.viewModel.ContactActivityViewModelImpl
 import com.meshdesh.trifler.databinding.ActivityContactBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ContactActivity : AppCompatActivity() {
+class ContactActivity : AppCompatActivity(), SendRequestBottomSheet.OnClickListener {
 
     private val viewModel: ContactActivityViewModelImpl by viewModels()
     private lateinit var binding: ActivityContactBinding
@@ -34,8 +34,9 @@ class ContactActivity : AppCompatActivity() {
                 binding.toolbar.visibility = View.GONE
             }
             is ContactActivityViewModel.CurrentStep.Step2 -> {
-                binding.toolbar.title = getString(R.string.contact_step_1_title)
-                binding.toolbar.subtitle = getString(R.string.contact_step_1_subtitle)
+                binding.toolbar.visibility = View.GONE
+                val bottomSheet = SendRequestBottomSheet()
+                bottomSheet.show(supportFragmentManager, bottomSheet.tag)
             }
         }
     }
@@ -53,5 +54,9 @@ class ContactActivity : AppCompatActivity() {
             add(binding.fragmentContainer.id, fragment)
             setReorderingAllowed(true)
         }
+    }
+
+    override fun onCloseClicked() {
+        // TODO
     }
 }

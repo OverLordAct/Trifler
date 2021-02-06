@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.meshdesh.trifler.contact.view.viewModel.ContactActivityViewModelImpl
+import com.meshdesh.trifler.contact.viewModel.ContactActivityViewModel
+import com.meshdesh.trifler.contact.viewModel.ContactActivityViewModelImpl
 import com.meshdesh.trifler.databinding.FragmentAddContactBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,7 +31,9 @@ class AddContactFragment : Fragment() {
     }
 
     private fun setupButton() {
-        binding
+        binding?.cta?.setOnClickListener {
+            contactActivityViewModel.onNext(ContactActivityViewModel.CurrentStep.Step1)
+        }
     }
 
     override fun onDestroyView() {
