@@ -10,14 +10,6 @@
         android:layout_height="wrap_content"
         tools:context=".dashboard.view.OnboardingDashboardFragment">
 
-        <com.meshdesh.trifler.common.customview.MainHeader
-            android:id="@+id/mainHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/welcomeText"
             android:layout_width="170dp"
@@ -29,7 +21,7 @@
             android:textAppearance="@style/T24WhiteBold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mainHeader" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/headingText"

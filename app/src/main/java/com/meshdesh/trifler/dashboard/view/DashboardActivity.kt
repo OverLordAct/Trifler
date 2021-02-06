@@ -20,7 +20,7 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun setInitialFragment() {
-        val fragment = OnboardedDashboardFragment.newInstance()
+        val fragment = OnboardingDashboardFragment()
 
         supportFragmentManager.commit {
             add(R.id.fragmentContainer, fragment)

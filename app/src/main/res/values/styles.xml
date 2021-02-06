@@ -111,7 +111,7 @@
 
     <style name="RoundedFilledButton" parent="RoundedBaseButton">
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">12dp</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
@@ -160,7 +160,7 @@
         <item name="android:textColorHint">@color/radicalred</item>
     </style>
 
-    <!--    For outlined edit text layout with custom font-->
+    <!-- For outlined edit text layout with custom font-->
     <style name="TextInputLayout.OutlineBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont
         </item>
@@ -174,7 +174,7 @@
         <item name="android:fontFamily">@font/poppins</item>
     </style>
 
-    <!--     For filled edit text with custom font-->
+    <!-- For filled edit text with custom font-->
     <style name="TextInputLayout.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:theme">@style/ThemeOverlay.TextInputEditText.FilledBox.CustomFont</item>
         <item name="android:textColorHint">@color/nobel</item>
@@ -184,33 +184,31 @@
         <item name="boxCornerRadiusBottomStart">5dp</item>
         <item name="boxCornerRadiusTopEnd">5dp</item>
         <item name="boxCornerRadiusTopStart">5dp</item>
+        <item name="prefixTextColor">@color/nobel</item>
+    </style>
+
+    <style name="Widget.Trifler.TextInputLayout.Phone" parent="TextInputLayout.FilledBox.CustomFont">
+        <item name="android:theme">@style/Theme.Trifler.TextInputLayout.Phone</item>
+    </style>
+
+    <style name="Theme.Trifler.TextInputLayout.Phone" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.5</item>
+        <item name="editTextStyle">@style/TextInputEditText.FilledBox.CustomFont</item>
     </style>
 
     <style name="ThemeOverlay.TextInputEditText.FilledBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
         <item name="editTextStyle">@style/TextInputEditText.FilledBox.CustomFont</item>
     </style>
 
-    <style name="TextInputEditText.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+    <style name="TextAppearance.Trifler.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-    <!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
-    <!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
-    <!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
-    <!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
-    <!--    </style>-->
-
-    <!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
-    <!--        <item name="android:fontFamily">@font/poppins</item>-->
-    <!--    </style>-->
-
-    <!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
-    <!--        <item name="android:fontFamily">@font/poppins</item>-->
-    <!--    </style>-->
-
-    <!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
-    <!--        <item name="android:fontFamily">@font/poppins</item>-->
-    <!--    </style>-->
+    <style name="TextInputEditText.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
 
     <!--    Checkbox-->
     <style name="Checkbox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">

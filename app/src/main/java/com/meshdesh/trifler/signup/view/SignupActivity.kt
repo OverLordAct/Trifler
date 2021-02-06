@@ -10,13 +10,13 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.databinding.ActivitySignupBinding
 import com.meshdesh.trifler.sigin.view.SigninActivity
 import com.meshdesh.trifler.signup.viewModel.SignupViewModel
 import com.meshdesh.trifler.signup.viewModel.SignupViewModelImpl
 import com.meshdesh.trifler.util.setGone
 import com.meshdesh.trifler.util.setVisible
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_signup.*
 
 @AndroidEntryPoint
 class SignupActivity : AppCompatActivity() {
@@ -28,10 +28,12 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private val viewModel: SignupViewModelImpl by viewModels()
+    private lateinit var binding: ActivitySignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        binding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         viewModel.signupStatusLiveData.observe(this, ::signupStatus)
 
@@ -41,18 +43,18 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun setSignupButton() {
-        signUpEmailButton.setOnClickListener {
-            val firstName = firstName.text?.toString() ?: ""
-            val lastName = lastName.text?.toString() ?: ""
-            val email = email.text?.toString() ?: ""
-            val password = password.text?.toString() ?: ""
-            val conditionCheck = termsCheckbox.isChecked
+        binding.signUpEmailButton.setOnClickListener {
+            val firstName = binding.firstName.text?.toString() ?: ""
+            val lastName = binding.lastName.text?.toString() ?: ""
+            val email = binding.email.text?.toString() ?: ""
+            val password = binding.password.text?.toString() ?: ""
+            val conditionCheck = binding.termsCheckbox.isChecked
 
-            firstNameTextLayout.isErrorEnabled = false
-            lastNameTextLayout.isErrorEnabled = false
-            emailTextLayout.isErrorEnabled = false
-            passwordTextLayout.isErrorEnabled = false
-            termsCheckbox.error = null
+            binding.firstNameTextLayout.isErrorEnabled = false
+            binding.lastNameTextLayout.isErrorEnabled = false
+            binding.emailTextLayout.isErrorEnabled = false
+            binding.passwordTextLayout.isErrorEnabled = false
+            binding.termsCheckbox.error = null
 
             viewModel.signup(firstName, lastName, email, password, conditionCheck)
         }
@@ -73,14 +75,14 @@ class SignupActivity : AppCompatActivity() {
             Spannable.SPAN_INCLUSIVE_INCLUSIVE
         )
 
-        termsCheckbox.text = spannableString
+        binding.termsCheckbox.text = spannableString
     }
 
     private fun setHeader() {
-        header.setButtonClickListener {
+        binding.header.setButtonClickListener {
             startActivity(SigninActivity.getInstance(this))
         }
-        header.setSecondaryButtonClickListener {
+        binding.header.setSecondaryButtonClickListener {
             startActivity(SigninActivity.getInstance(this))
         }
     }
@@ -88,46 +90,47 @@ class SignupActivity : AppCompatActivity() {
     private fun signupStatus(status: SignupViewModel.SignupStatus) {
         when (status) {
             is SignupViewModel.SignupStatus.Loading -> {
-                progress.setVisible()
+                binding.progress.setVisible()
             }
 
             is SignupViewModel.SignupStatus.Failure -> {
-                progress.setGone()
+                binding.progress.setGone()
                 Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
             }
 
             is SignupViewModel.SignupStatus.Success -> {
-                progress.setGone()
+                binding.progress.setGone()
                 Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
             }
 
             is SignupViewModel.SignupStatus.Empty.FirstName -> {
-                progress.setGone()
-                firstNameTextLayout.isErrorEnabled = true
-                firstNameTextLayout.error = getString(R.string.signup_firstname_blank)
+                binding.progress.setGone()
+                binding.firstNameTextLayout.isErrorEnabled = true
+                binding.firstNameTextLayout.error = getString(R.string.signup_firstname_blank)
             }
 
             is SignupViewModel.SignupStatus.Empty.LastName -> {
-                progress.setGone()
-                lastNameTextLayout.isErrorEnabled = true
-                lastNameTextLayout.error = getString(R.string.signup_lastname_blank)
+                binding.progress.setGone()
+                binding.lastNameTextLayout.isErrorEnabled = true
+                binding.lastNameTextLayout.error = getString(R.string.signup_lastname_blank)
             }
 
             is SignupViewModel.SignupStatus.Empty.Email -> {
-                progress.setGone()
-                emailTextLayout.isErrorEnabled = true
-                emailTextLayout.error = getString(R.string.signup_email_blank)
+                binding.progress.setGone()
+                binding.emailTextLayout.isErrorEnabled = true
+                binding.emailTextLayout.error = getString(R.string.signup_email_blank)
             }
 
             is SignupViewModel.SignupStatus.Empty.Password -> {
-                progress.setGone()
-                passwordTextLayout.isErrorEnabled = true
-                passwordTextLayout.error = getString(R.string.signup_password_blank)
+                binding.progress.setGone()
+                binding.passwordTextLayout.isErrorEnabled = true
+                binding.passwordTextLayout.error = getString(R.string.signup_password_blank)
             }
 
             is SignupViewModel.SignupStatus.Empty.Condition -> {
-                progress.setGone()
-                termsCheckbox.error = getString(R.string.signup_termsandconditions_unchecked)
+                binding.progress.setGone()
+                binding.termsCheckbox.error =
+                    getString(R.string.signup_termsandconditions_unchecked)
             }
         }
     }

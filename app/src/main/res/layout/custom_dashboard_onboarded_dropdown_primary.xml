@@ -22,7 +22,7 @@
             android:paddingHorizontal="@dimen/module_20"
             android:paddingVertical="@dimen/module_15"
             android:text="@string/onboarded_dashboardcard_primary"
-            app:icon="@drawable/arrow_down_up"
+            app:icon="@drawable/arrowhead_down_up"
             app:iconGravity="end"
             app:iconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"

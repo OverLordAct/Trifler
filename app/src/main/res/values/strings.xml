@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Trifler</string>
 
-    <!--    Onboarding-->
+    <!-- Onboarding-->
     <string name="oboarding_skip_button">Skip</string>
     <string name="onboarding_get_started_button">Get Started</string>
 
-    <!--    Login in-->
+    <!-- Sign in-->
     <string name="login_primary_button">Sign in</string>
     <string name="login_secondary_button">Sign in with Google</string>
     <string name="login_title">Welcome Back</string>
@@ -19,7 +19,7 @@
     <string name="password_blank">Password cannot be blank</string>
     <string name="login_failure">Unable to Login, Please Try Again</string>
 
-    <!--    Sign up-->
+    <!-- Sign up-->
     <string name="create_account">Create Account</string>
     <string name="signup_primary_text">Already have an account?</string>
     <string name="signup_redirect_text">Sign in</string>
@@ -60,4 +60,11 @@
     <string name="bottom_nav_speed_dial">Speed Dial</string>
     <string name="bottom_nav_contacts">Contacts</string>
     <string name="bottom_nav_profile">Profile</string>
+
+    <!-- Contacts -->
+    <string name="contact_step_1_title">Add a Contact</string>
+    <string name="contact_step_1_subtitle">Enter Phone Number to Add Contact</string>
+    <string name="contact_step_1_cta">Add Contact</string>
+    <string name="contact_sample_phone">9734651254</string>
+    <string name="in_country_code">+91</string>
 </resources>
