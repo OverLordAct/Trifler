@@ -71,4 +71,11 @@
     <string name="contact_step_2_subtitle">Send request if you know the person. Though you can still add the contact.</string>
     <string name="contact_step_2_cta_1">Continue</string>
     <string name="contact_step_2_cta_2">Send Request</string>
+    <string name="contact_step_3_title">Add a Contact</string>
+    <string name="contact_step_3_subtitle">Enter Contact Information</string>
+    <string name="contact_step_3_phone_number_title">CONTACT NO.</string>
+    <string name="contact_step_3_input_name">Contact Name</string>
+    <string name="contact_step_3_category_hint">Category In</string>
+    <string name="contact_step_3_duration_hint">Temporary for</string>
+    <string name="contact_step_3_cta">Add Contact</string>
 </resources>

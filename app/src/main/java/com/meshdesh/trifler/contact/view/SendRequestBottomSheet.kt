@@ -17,6 +17,8 @@ class SendRequestBottomSheet : BottomSheetDialogFragment() {
 
     interface OnClickListener {
         fun onCloseClicked()
+        fun onContinue()
+        fun onSendRequest()
     }
 
     private var listener: OnClickListener? = null
@@ -38,6 +40,12 @@ class SendRequestBottomSheet : BottomSheetDialogFragment() {
         binding?.closeButton?.setOnClickListener {
             listener?.onCloseClicked()
             contactActivityViewModel.onBack(ContactActivityViewModel.CurrentStep.Step2)
+            if (!isStateSaved) dismiss() else dismissAllowingStateLoss()
+        }
+
+        binding?.cta2?.setOnClickListener {
+            listener?.onSendRequest()
+            contactActivityViewModel.onNext(ContactActivityViewModel.CurrentStep.Step3)
             if (!isStateSaved) dismiss() else dismissAllowingStateLoss()
         }
     }
