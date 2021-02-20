@@ -71,8 +71,7 @@ class ContactActivity : AppCompatActivity(), SendRequestBottomSheet.OnClickListe
     override fun onSendRequest() {
         val fragment = AddContactDetailsFragment()
         supportFragmentManager.commit {
-            add(binding.fragmentContainer.id, fragment)
-            addToBackStack(null)
+            replace(binding.fragmentContainer.id, fragment)
         }
     }
 }
