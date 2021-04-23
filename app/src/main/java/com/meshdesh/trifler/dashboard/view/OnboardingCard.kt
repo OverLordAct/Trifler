@@ -2,20 +2,21 @@ package com.meshdesh.trifler.dashboard.view
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.cardview.widget.CardView
+import android.view.LayoutInflater
+import com.google.android.material.card.MaterialCardView
 import com.meshdesh.trifler.R
-import kotlinx.android.synthetic.main.custom_dashboard_onboarding_card.view.*
+import com.meshdesh.trifler.databinding.CustomDashboardOnboardingCardBinding
 
 class OnboardingCard(
     context: Context,
     attributeSet: AttributeSet
-) : CardView(context, attributeSet) {
+) : MaterialCardView(context, attributeSet) {
 
     private var cardListener: (() -> Unit)? = null
+    private var binding =
+        CustomDashboardOnboardingCardBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
-        inflate(context, R.layout.custom_dashboard_onboarding_card, this)
-
         context.obtainStyledAttributes(attributeSet, R.styleable.OnboardingCard).apply {
             setHeaderText(getString(R.styleable.OnboardingCard_headerText).toString())
             setBodyText(getString(R.styleable.OnboardingCard_bodyText).toString())
@@ -24,16 +25,16 @@ class OnboardingCard(
     }
 
     fun setHeaderText(text: String) {
-        headerText.text = text
+        binding.headerText.text = text
     }
 
     fun setBodyText(text: String) {
-        bodyText.text = text
+        binding.bodyText.text = text
     }
 
     fun setCardClickListener(listener: (() -> Unit)) {
         cardListener = listener
-        this.setCardClickListener {
+        setOnClickListener {
             cardListener?.invoke()
         }
     }

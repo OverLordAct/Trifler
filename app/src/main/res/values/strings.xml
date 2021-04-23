@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Trifler</string>
 
-    <!--    Onboarding-->
+    <!-- Onboarding-->
     <string name="oboarding_skip_button">Skip</string>
     <string name="onboarding_get_started_button">Get Started</string>
 
-    <!--    Login in-->
+    <!-- Sign in-->
     <string name="login_primary_button">Sign in</string>
     <string name="login_secondary_button">Sign in with Google</string>
     <string name="login_title">Welcome Back</string>
@@ -19,7 +19,7 @@
     <string name="password_blank">Password cannot be blank</string>
     <string name="login_failure">Unable to Login, Please Try Again</string>
 
-    <!--    Sign up-->
+    <!-- Sign up-->
     <string name="create_account">Create Account</string>
     <string name="signup_primary_text">Already have an account?</string>
     <string name="signup_redirect_text">Sign in</string>
@@ -38,6 +38,8 @@
     <string name="signup_password_blank">Password cannot be empty</string>
     <string name="signup_failure">Unable to Signup, Please Try Again</string>
     <string name="signup_termsandconditions_unchecked">Terms and conditions not checked</string>
+    <string name="signup_phone_number">Phone Number</string>
+    <string name="signup_phone_number_blank">Phone Number cannot be empty</string>
 
     <!-- Dashboard-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -60,4 +62,33 @@
     <string name="bottom_nav_speed_dial">Speed Dial</string>
     <string name="bottom_nav_contacts">Contacts</string>
     <string name="bottom_nav_profile">Profile</string>
+
+    <!-- Contacts -->
+    <string name="contact_step_1_title">Add a Contact</string>
+    <string name="contact_step_1_subtitle">Enter Phone Number to Add Contact</string>
+    <string name="contact_step_1_cta">Add Contact</string>
+    <string name="contact_sample_phone">9734651254</string>
+    <string name="in_country_code">+91</string>
+    <string name="contact_step_2_title">This Contact exists in Trifler</string>
+    <string name="contact_step_2_subtitle">Send request if you know the person. Though you can still add the contact.</string>
+    <string name="contact_step_2_cta_1">Continue</string>
+    <string name="contact_step_2_cta_2">Send Request</string>
+    <string name="contact_step_3_title">Add a Contact</string>
+    <string name="contact_step_3_subtitle">Enter Contact Information</string>
+    <string name="contact_step_3_phone_number_title">CONTACT NO.</string>
+    <string name="contact_step_3_input_name">Contact Name</string>
+    <string name="contact_step_3_category_hint">Category In</string>
+    <string name="contact_step_3_duration_hint">Temporary for</string>
+    <string name="contact_step_3_cta">Add Contact</string>
+
+    <!-- Category -->
+    <string name="category_step_1_title">Add a New Category</string>
+    <string name="category_step_1_category_input_hint">Enter Category Name</string>
+    <string name="category_step_1_cta">Add Category</string>
+    <string name="category_step_2_as_divider">AS</string>
+    <string name="category_card_header">Saved as</string>
+    <string name="category_step_2_cta">Dashboard</string>
+    <string name="category_step_1_empty_error">Category name cannot be empty</string>
+    <string name="category_step_1_duplicate_error">Category name already exists</string>
+    <string name="category_step_1_network_error">Some error occurred, please try again</string>
 </resources>

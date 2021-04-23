@@ -10,14 +10,6 @@
         android:layout_height="wrap_content"
         tools:context=".dashboard.view.OnboardingDashboardFragment">
 
-        <com.meshdesh.trifler.common.customview.MainHeader
-            android:id="@+id/mainHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/welcomeText"
             android:layout_width="170dp"
@@ -26,10 +18,10 @@
             android:background="@drawable/circle"
             android:gravity="center"
             android:text="@string/welcome"
-            android:textAppearance="@style/T24WhiteBold"
+            android:textAppearance="@style/TextAppearance.Trifler.T24WhiteBold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mainHeader" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/headingText"
@@ -38,7 +30,7 @@
             android:layout_marginHorizontal="@dimen/module_30"
             android:layout_marginTop="@dimen/module_43"
             android:text="@string/onboarding_dashboard_heading"
-            android:textAppearance="@style/T24RadicalRedSemiBold"
+            android:textAppearance="@style/TextAppearance.Trifler.T24RadicalRedSemiBold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeText" />

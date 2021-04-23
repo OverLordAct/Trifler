@@ -2,9 +2,10 @@ package com.meshdesh.trifler.common.customview
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.meshdesh.trifler.R
-import kotlinx.android.synthetic.main.custom_signin_signup_header.view.*
+import com.meshdesh.trifler.databinding.CustomSigninSignupHeaderBinding
 
 class SigninUpHeader(
     context: Context,
@@ -13,10 +14,10 @@ class SigninUpHeader(
 
     private var primaryButtonClicked: (() -> Unit)? = null
     private var secondaryButtonClicked: (() -> Unit)? = null
+    private var binding =
+        CustomSigninSignupHeaderBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
-        inflate(context, R.layout.custom_signin_signup_header, this)
-
         context.obtainStyledAttributes(attr, R.styleable.SigninUpHeader).apply {
             setButtonText(getString(R.styleable.SigninUpHeader_buttonText).toString())
             setTitle(getString(R.styleable.SigninUpHeader_titleText).toString())
@@ -28,31 +29,31 @@ class SigninUpHeader(
     }
 
     fun setButtonText(text: String) {
-        primaryButton.text = text
+        binding.primaryButton.text = text
     }
 
     fun setTitle(text: String) {
-        title.text = text
+        binding.title.text = text
     }
 
     fun setSubtitlePrimary(text: String) {
-        subtitle_primary.text = text
+        binding.subtitlePrimary.text = text
     }
 
     fun setSubtitleSecondary(text: String) {
-        subtitle_secondary.text = text
+        binding.subtitleSecondary.text = text
     }
 
     fun setButtonClickListener(listener: (() -> Unit)) {
         primaryButtonClicked = listener
-        primaryButton.setOnClickListener {
+        binding.primaryButton.setOnClickListener {
             primaryButtonClicked?.invoke()
         }
     }
 
     fun setSecondaryButtonClickListener(listener: (() -> Unit)) {
         secondaryButtonClicked = listener
-        subtitle_secondary.setOnClickListener {
+        binding.subtitleSecondary.setOnClickListener {
             secondaryButtonClicked?.invoke()
         }
     }

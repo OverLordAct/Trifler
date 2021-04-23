@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/module_20"
-            android:textAppearance="@style/T28WhiteSemiBold"
+            android:textAppearance="@style/TextAppearance.Trifler.T28WhiteSemiBold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Personal" />
@@ -28,7 +28,7 @@
             android:id="@+id/secondaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/T18WhiteSemiBold"
+            android:textAppearance="@style/TextAppearance.Trifler.T18WhiteSemiBold"
             app:layout_constraintStart_toStartOf="@id/mainText"
             app:layout_constraintTop_toBottomOf="@id/mainText"
             tools:text="5 contacts" />

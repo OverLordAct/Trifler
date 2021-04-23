@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".contact.view.AddContactDetailsFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        style="@style/TextAppearance.Trifler.T24RadicalRedSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/module_20"
+        android:text="@string/contact_step_3_title"
+        app:layout_constraintBottom_toTopOf="@id/subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/subtitle"
+        style="@style/TextAppearance.Trifler.T14RaineeSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_step_3_subtitle"
+        app:layout_constraintBottom_toTopOf="@id/phoneNumberTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/phoneNumberTitle"
+        style="@style/TextAppearance.Trifler.T14RaineeBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/module_40"
+        android:layout_marginTop="@dimen/module_20"
+        android:text="@string/contact_step_3_phone_number_title"
+        app:layout_constraintBottom_toTopOf="@id/phoneNumberField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/phoneNumberField"
+        style="@style/TextAppearance.Trifler.T24RadicalRedBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9353454483"
+        app:layout_constraintBottom_toTopOf="@id/contactNameLayout"
+        app:layout_constraintStart_toStartOf="@id/phoneNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberTitle"
+        tools:text="1234567890" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contactNameLayout"
+        style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
+        android:layout_width="@dimen/module_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/module_10"
+        android:layout_marginEnd="@dimen/module_40"
+        android:hint="@string/contact_step_3_input_name"
+        app:layout_constraintBottom_toTopOf="@id/categoryLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/phoneNumberField"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contactNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/categoryLayout"
+        style="@style/Widget.Trifler.TextInputLayout.FilledBox.DropDown"
+        android:layout_width="@dimen/module_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/module_15"
+        android:hint="@string/contact_step_3_category_hint"
+        app:layout_constraintBottom_toTopOf="@id/contactDurationLayout"
+        app:layout_constraintEnd_toEndOf="@id/contactNameLayout"
+        app:layout_constraintStart_toStartOf="@id/phoneNumberField"
+        app:layout_constraintTop_toBottomOf="@id/contactNameLayout">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/categoryInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contactDurationLayout"
+        style="@style/Widget.Trifler.TextInputLayout.FilledBox.DropDown"
+        android:layout_width="@dimen/module_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/module_15"
+        android:hint="@string/contact_step_3_duration_hint"
+        app:layout_constraintBottom_toTopOf="@id/cta"
+        app:layout_constraintEnd_toEndOf="@id/contactNameLayout"
+        app:layout_constraintStart_toStartOf="@id/phoneNumberField"
+        app:layout_constraintTop_toBottomOf="@id/categoryLayout">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/contactDurationInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cta"
+        style="@style/Widget.Trifler.Button.Rounded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="@dimen/module_20"
+        android:text="@string/contact_step_3_cta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/contactNameLayout"
+        app:layout_constraintStart_toStartOf="@id/contactNameLayout"
+        app:layout_constraintTop_toBottomOf="@id/contactDurationLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

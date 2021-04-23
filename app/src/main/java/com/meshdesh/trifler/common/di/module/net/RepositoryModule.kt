@@ -1,5 +1,7 @@
 package com.meshdesh.trifler.common.di.module.net
 
+import com.meshdesh.trifler.category.data.repository.CategoryRepository
+import com.meshdesh.trifler.category.data.repository.CategoryRepositoryImpl
 import com.meshdesh.trifler.common.auth.repository.TokenRepository
 import com.meshdesh.trifler.common.auth.repository.TokenRepositoryImpl
 import com.meshdesh.trifler.sigin.data.repository.SigninRepository
@@ -32,4 +34,10 @@ abstract class RepositoryModule {
     abstract fun providesSigninRepository(
         signinRepository: SigninRepositoryImpl
     ): SigninRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindsCategoryRepository(
+        categoryRepositoryImpl: CategoryRepositoryImpl
+    ): CategoryRepository
 }

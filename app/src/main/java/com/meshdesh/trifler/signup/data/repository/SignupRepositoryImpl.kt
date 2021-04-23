@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 @Singleton
 class SignupRepositoryImpl @Inject constructor(
-    private val triflerAPI: TriflerAPI
+    private val triflerAPI: TriflerAPI.UnauthenticatedAPI
 ) : SignupRepository {
     override suspend fun signup(signupRequest: SignupRequest): Result<SignupResponse.Success, SignupResponse.Failure> {
         return triflerAPI.signup(signupRequest)

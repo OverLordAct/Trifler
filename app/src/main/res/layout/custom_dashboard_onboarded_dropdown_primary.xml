@@ -16,13 +16,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/primaryButton"
-            style="@style/OnboardedDashboardPrimaryButton"
+            style="@style/Widget.Trifler.OnboardedDashboard.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/module_20"
             android:paddingVertical="@dimen/module_15"
             android:text="@string/onboarded_dashboardcard_primary"
-            app:icon="@drawable/arrow_down_up"
+            app:icon="@drawable/arrowhead_down_up"
             app:iconGravity="end"
             app:iconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/action1Button"
-                style="@style/OnboardedDashboardAction1Button"
+                style="@style/Widget.Trifler.Button.OnboardedDashboard.CTA1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/module_24"
@@ -55,7 +55,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/action2Button"
-                style="@style/Widget.ButtonOnboardedDashboardAction2"
+                style="@style/Widget.Trifler.Button.OnboardedDashboard.CTA2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/module_20"

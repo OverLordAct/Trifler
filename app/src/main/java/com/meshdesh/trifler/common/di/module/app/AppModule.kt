@@ -6,10 +6,13 @@ import com.meshdesh.trifler.common.auth.AccessTokenAuthenticator
 import com.meshdesh.trifler.common.data.api.TokenAPI
 import com.meshdesh.trifler.common.data.api.TriflerAPI
 import com.meshdesh.trifler.common.data.calladapters.coroutinecalladapter.CoroutinesCallAdapterFactory
+import com.meshdesh.trifler.common.di.qualifier.AuthenticatedClient
+import com.meshdesh.trifler.common.di.qualifier.BaseClient
 import com.meshdesh.trifler.common.di.qualifier.CoroutinesAPI
 import com.meshdesh.trifler.common.di.qualifier.LoggingInterceptor
 import com.meshdesh.trifler.common.di.qualifier.NonCoroutinesAPI
 import com.meshdesh.trifler.common.di.qualifier.TokenInterceptor
+import com.meshdesh.trifler.common.di.qualifier.UnauthenticatedAPI
 import com.meshdesh.trifler.common.storage.token.TokenManager
 import com.meshdesh.trifler.common.storage.token.TokenManagerImpl
 import dagger.Module
@@ -38,11 +41,36 @@ class AppModule {
             .create()
     }
 
+    @CoroutinesAPI
     @Singleton
     @Provides
-    @CoroutinesAPI
     fun providesRetrofitBuilderWithCoroutines(
-        okHttpClient: OkHttpClient
+        @AuthenticatedClient okHttpClient: OkHttpClient
+    ): Retrofit.Builder {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addCallAdapterFactory(CoroutinesCallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+    }
+
+    @NonCoroutinesAPI
+    @Singleton
+    @Provides
+    fun providesRetrofitBuilderWithoutCoroutines(
+        @BaseClient okHttpClient: OkHttpClient
+    ): Retrofit.Builder {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+    }
+
+    @UnauthenticatedAPI
+    @Singleton
+    @Provides
+    fun providesUnauthenticatedRetrofitBuilderWithCoroutines(
+        @BaseClient okHttpClient: OkHttpClient
     ): Retrofit.Builder {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -53,14 +81,8 @@ class AppModule {
 
     @Singleton
     @Provides
-    @NonCoroutinesAPI
-    fun providesRetrofitBuilderWithoutCoroutines(
-        okHttpClient: OkHttpClient
-    ): Retrofit.Builder {
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(okHttpClient)
+    fun providesUnauthenticatedTriflerAPI(@UnauthenticatedAPI retrofit: Retrofit.Builder): TriflerAPI.UnauthenticatedAPI {
+        return retrofit.build().create(TriflerAPI.UnauthenticatedAPI::class.java)
     }
 
     @Singleton
@@ -77,8 +99,21 @@ class AppModule {
         return retrofit.build().create(TokenAPI::class.java)
     }
 
+    @BaseClient
     @Provides
-    fun providesHttpLoggerClient(
+    fun providesBaseClient(
+        @LoggingInterceptor loggingInterceptor: Interceptor
+    ): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .connectTimeout(100, TimeUnit.SECONDS)
+            .readTimeout(100, TimeUnit.SECONDS)
+            .build()
+    }
+
+    @AuthenticatedClient
+    @Provides
+    fun providesAuthenticatedClient(
         @LoggingInterceptor loggingInterceptor: Interceptor,
         @TokenInterceptor tokenInterceptor: Interceptor,
         authenticator: AccessTokenAuthenticator
@@ -111,7 +146,10 @@ class AppModule {
         return Interceptor {
             it.proceed(
                 it.request().newBuilder()
-                    .header("Authorization", tokenManager.getAccessToken() ?: "")
+                    .header(
+                        AccessTokenAuthenticator.AUTHENTICATION,
+                        tokenManager.getAccessToken() ?: ""
+                    )
                     .build()
             )
         }

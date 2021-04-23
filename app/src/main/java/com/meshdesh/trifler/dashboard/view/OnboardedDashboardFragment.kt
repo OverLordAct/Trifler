@@ -33,13 +33,13 @@ class OnboardedDashboardFragment : Fragment() {
                 TransitionManager.beginDelayedTransition(collapsibleLayout, AutoTransition())
                 collapsibleLayout.visibility = View.VISIBLE
                 overlayFrame.visibility = View.VISIBLE
-                primaryButton.setIconResource(R.drawable.arrow_down_up)
+                primaryButton.setIconResource(R.drawable.arrowhead_down_up)
                 (primaryButton.icon as AnimatedVectorDrawable).start()
             } else {
                 TransitionManager.beginDelayedTransition(collapsibleLayout, AutoTransition())
                 collapsibleLayout.visibility = View.GONE
                 overlayFrame.visibility = View.GONE
-                primaryButton.setIconResource(R.drawable.arrow_up_down)
+                primaryButton.setIconResource(R.drawable.arrowhead_up_down)
                 (primaryButton.icon as AnimatedVectorDrawable).start()
             }
         }
@@ -56,14 +56,5 @@ class OnboardedDashboardFragment : Fragment() {
             )
         )
         catergoryRecycler.setHasFixedSize(true)
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            OnboardedDashboardFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
     }
 }

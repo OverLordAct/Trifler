@@ -24,7 +24,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailContainer"
-            style="@style/TextInputLayout.FilledBox.CustomFont"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="55dp"
@@ -48,7 +48,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordContainer"
-            style="@style/TextInputLayout.FilledBox.CustomFont"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -71,7 +71,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
-            style="@style/RoundedFilledButton"
+            style="@style/Widget.Trifler.Button.Rounded"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -92,7 +92,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButtonGoogle"
-            style="@style/RoundedFilledButton"
+            style="@style/Widget.Trifler.Button.Rounded"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

@@ -1,6 +1,5 @@
 package com.meshdesh.trifler.signup.viewModel
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,9 +8,12 @@ import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.localize.Localize
 import com.meshdesh.trifler.signup.data.entity.SignupRequest
 import com.meshdesh.trifler.signup.data.repository.SignupRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SignupViewModelImpl @ViewModelInject constructor(
+@HiltViewModel
+class SignupViewModelImpl @Inject constructor(
     private val signupRepository: SignupRepository,
     private val localize: Localize
 ) : ViewModel(), SignupViewModel {
@@ -23,7 +25,8 @@ class SignupViewModelImpl @ViewModelInject constructor(
         lastName: String,
         email: String,
         password: String,
-        conditionCheck: Boolean
+        conditionCheck: Boolean,
+        phoneNumber: String
     ) {
         signupStatusLiveData.value = SignupViewModel.SignupStatus.Loading
 
@@ -39,10 +42,10 @@ class SignupViewModelImpl @ViewModelInject constructor(
             flag = true
         }
 
-        if (email.isBlank()) {
-            signupStatusLiveData.value = SignupViewModel.SignupStatus.Empty.Email
-            flag = true
-        }
+        // if (email.isBlank()) {
+        //     signupStatusLiveData.value = SignupViewModel.SignupStatus.Empty.Email
+        //     flag = true
+        // }
 
         if (password.isBlank()) {
             signupStatusLiveData.value = SignupViewModel.SignupStatus.Empty.Password
@@ -54,12 +57,17 @@ class SignupViewModelImpl @ViewModelInject constructor(
             flag = true
         }
 
+        if (phoneNumber.isBlank()) {
+            signupStatusLiveData.value = SignupViewModel.SignupStatus.Empty.Phone
+            flag = true
+        }
+
         if (flag) return
 
         viewModelScope.launch {
             val name = "$firstName $lastName"
 
-            val signupRequest = SignupRequest(name, email, password)
+            val signupRequest = SignupRequest(name, phoneNumber, password)
 
             when (val response = signupRepository.signup(signupRequest)) {
                 is Result.Success -> {

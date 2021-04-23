@@ -11,7 +11,8 @@ interface SignupViewModel {
         lastName: String,
         email: String,
         password: String,
-        conditionCheck: Boolean
+        conditionCheck: Boolean,
+        phoneNumber: String
     )
 
     sealed class SignupStatus {
@@ -31,6 +32,7 @@ interface SignupViewModel {
             object Email : Empty()
             object Password : Empty()
             object Condition : Empty()
+            object Phone : Empty()
         }
     }
 }

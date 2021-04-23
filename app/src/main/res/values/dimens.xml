@@ -23,5 +23,6 @@
     <dimen name="module_26">26dp</dimen>
     <dimen name="module_16">16dp</dimen>
     <dimen name="module_100">100dp</dimen>
-    <item name="module_0_3" format="float" type="dimen">0.3</item>
+    <dimen name="module_0_3">0.3dp</dimen>
+    <dimen name="module_25">25dp</dimen>
 </resources>

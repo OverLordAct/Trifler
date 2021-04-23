@@ -2,126 +2,157 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Text -->
-    <style name="TextDimGrayMedium">
+    <style name="TextAppearance.Trifler.DimGrayMedium" parent="">
         <item name="android:textColor">@color/dimgray</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
-    <style name="TextRadicalRedBold">
+    <style name="TextAppearance.Trifler.RadicalRedBold" parent="">
         <item name="android:textColor">@color/radicalred</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-    <style name="T16NobelNormal">
+    <style name="TextAppearance.Trifler.T16NobelNormal" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textColor">@color/nobel</item>
     </style>
 
-    <style name="T20CharcoalBold">
+    <style name="TextAppearance.Trifler.T20CharcoalBold" parent="">
         <item name="android:textSize">20sp</item>s
         <item name="android:textColor">@color/charcoal</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-    <style name="T16DimGrayMedium" parent="TextDimGrayMedium">
+    <style name="TextAppearance.Trifler.T16DimGrayMedium" parent="TextAppearance.Trifler.DimGrayMedium">
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="T18DimGrayMedium" parent="TextDimGrayMedium">
+    <style name="TextAppearance.Trifler.T18DimGrayMedium" parent="TextAppearance.Trifler.DimGrayMedium">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="T18RadicalRedMedium" parent="TextDimGrayMedium">
+    <style name="TextAppearance.Trifler.T18RadicalRedMedium" parent="TextAppearance.Trifler.DimGrayMedium">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="T32RadicalRedBold" parent="TextRadicalRedBold">
+    <style name="TextAppearance.Trifler.T32RadicalRedBold" parent="TextAppearance.Trifler.RadicalRedBold">
         <item name="android:textSize">32sp</item>
     </style>
 
-    <style name="T28RadicalRedBold" parent="TextDimGrayMedium">
+    <style name="TextAppearance.Trifler.T28RadicalRedBold" parent="TextAppearance.Trifler.DimGrayMedium">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/radicalred</item>
     </style>
 
-    <style name="T16RaineeNormal">
+    <style name="TextAppearance.Trifler.T16RaineeNormal" parent="">
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/rainee</item>
     </style>
 
-    <style name="T24WhiteBold">
+    <style name="TextAppearance.Trifler.T14RaineeSemiBold" parent="">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/rainee</item>
+    </style>
+
+    <style name="TextAppearance.Trifler.T14RaineeBold" parent="">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/rainee</item>
+    </style>
+
+    <style name="TextAppearance.Trifler.T24WhiteBold" parent="">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="T24RadicalRedSemiBold">
+    <style name="TextAppearance.Trifler.T24RadicalRedSemiBold" parent="">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/radicalred</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
-    <style name="T20WhiteSemiBold">
+    <style name="TextAppearance.Trifler.T24RadicalRedBold" parent="">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="TextAppearance.Trifler.T20WhiteSemiBold" parent="">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
-    <style name="T20RadicalRedSemiBold">
+    <style name="TextAppearance.Trifler.T20RadicalRedSemiBold" parent="">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/radicalred</item>
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
-    <style name="T28WhiteSemiBold">
+    <style name="TextAppearance.Trifler.T28WhiteSemiBold" parent="">
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
-    <style name="T18WhiteSemiBold">
+    <style name="TextAppearance.Trifler.T18WhiteSemiBold" parent="">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
+    <style name="TextAppearance.Trifler.T16Radical.Medium" parent="TextAppearance.Trifler.DimGrayMedium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+    </style>
+
     <!-- Button -->
-    <style name="RoundedBaseButton">
+    <style name="Widget.Trifler.Button.Rounded.Base" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">999dp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:letterSpacing">0.0</item>
     </style>
 
-    <style name="RoundedOutlinedBaseButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="Widget.Trifler.Button.RoundedOutlined.Base" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="cornerRadius">999dp</item>
         <item name="android:textColor">@color/radicalred</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
-        <item name="android:strokeWidth">1</item>
-        <item name="android:strokeColor">@color/radicalred</item>
+        <item name="android:strokeWidth">2</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:strokeColor">@color/radicalred</item>a
+        <item name="strokeColor">@color/radicalred</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:letterSpacing">0.0</item>
     </style>
 
-    <style name="OnboardingMainButton" parent="RoundedBaseButton">
+    <style name="Widget.Trifler.Onboarding.Main" parent="Widget.Trifler.Button.Rounded.Base">
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">10dp</item>
     </style>
 
-    <style name="RoundedFilledButton" parent="RoundedBaseButton">
+    <style name="Widget.Trifler.Button.Rounded" parent="Widget.Trifler.Button.Rounded.Base">
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">10dp</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-    <style name="SignInOutHeaderButton" parent="RoundedBaseButton">
+    <style name="Widget.Trifler.Button.SignInOutHeader" parent="Widget.Trifler.Button.Rounded.Base">
         <item name="android:textSize">16sp</item>
         <item name="android:paddingVertical" tools:targetApi="o">8dp</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
-    <style name="OnboardedDashboardPrimaryButton">
+    <style name="Widget.Trifler.OnboardedDashboard.Primary" parent="Widget.Trifler.Button.Rounded">
         <item name="android:textSize">20sp</item>
         <item name="android:paddingVertical" tools:targetApi="o">@dimen/module_15</item>
         <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/module_20</item>
@@ -132,7 +163,7 @@
         <item name="cornerRadius">@dimen/module_5</item>
     </style>
 
-    <style name="Widget.Button.Skip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="Widget.Trifler.Button.Skip" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/grey</item>
         <item name="fontFamily">@font/poppins_bold</item>
@@ -140,17 +171,22 @@
         <item name="strokeColor">@color/gainsboro</item>
     </style>
 
-    <style name="OnboardedDashboardAction1Button" parent="RoundedBaseButton">
+    <style name="Widget.Trifler.Button.OnboardedDashboard.CTA1" parent="Widget.Trifler.Button.Rounded.Base">
         <item name="android:textColor">@color/white</item>
-        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="Widget.ButtonOnboardedDashboardAction2" parent="RoundedOutlinedBaseButton">
+    <style name="Widget.Trifler.Button.OnboardedDashboard.CTA2" parent="Widget.Trifler.Button.RoundedOutlined.Base">
         <item name="strokeColor">@color/radicalred</item>
-        <item name="strokeWidth">1dp</item>
-        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">14dp</item>
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Widget.Trifler.Button.RoundedOutline.T18" parent="Widget.Trifler.Button.RoundedOutlined.Base">
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">10dp</item>
     </style>
 
     <!-- Edit Text -->
@@ -160,7 +196,7 @@
         <item name="android:textColorHint">@color/radicalred</item>
     </style>
 
-    <!--    For outlined edit text layout with custom font-->
+    <!-- For outlined edit text layout with custom font-->
     <style name="TextInputLayout.OutlineBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont
         </item>
@@ -174,8 +210,8 @@
         <item name="android:fontFamily">@font/poppins</item>
     </style>
 
-    <!--     For filled edit text with custom font-->
-    <style name="TextInputLayout.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <!-- For filled edit text with custom font-->
+    <style name="Widget.Trifler.TextInputLayout.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:theme">@style/ThemeOverlay.TextInputEditText.FilledBox.CustomFont</item>
         <item name="android:textColorHint">@color/nobel</item>
         <item name="boxBackgroundColor">@color/whitesmoke</item>
@@ -184,40 +220,51 @@
         <item name="boxCornerRadiusBottomStart">5dp</item>
         <item name="boxCornerRadiusTopEnd">5dp</item>
         <item name="boxCornerRadiusTopStart">5dp</item>
+        <item name="prefixTextColor">@color/nobel</item>
+    </style>
+
+    <style name="Widget.Trifler.TextInputLayout.FilledBox.DropDown" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="android:theme">
+            @style/ThemeOverlay.Trifler.TextInputEditText.FilledBox.DropDown.CustomFont
+        </item>
+        <item name="android:textColorHint">@color/nobel</item>
+    </style>
+
+    <style name="ThemeOverlay.Trifler.TextInputEditText.FilledBox.DropDown.CustomFont" parent="ThemeOverlay.MaterialComponents.AutoCompleteTextView.FilledBox">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="Widget.Trifler.TextInputLayout.Phone" parent="Widget.Trifler.TextInputLayout.FilledBox.CustomFont">
+        <item name="android:theme">@style/ThemeOverlay.Trifler.TextInputLayout.Phone</item>
+    </style>
+
+    <style name="ThemeOverlay.Trifler.TextInputLayout.Phone" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.5</item>
+        <item name="editTextStyle">@style/TextInputEditText.FilledBox.CustomFont</item>
     </style>
 
     <style name="ThemeOverlay.TextInputEditText.FilledBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
         <item name="editTextStyle">@style/TextInputEditText.FilledBox.CustomFont</item>
     </style>
 
-    <style name="TextInputEditText.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+    <style name="TextAppearance.Trifler.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
-    <!--    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">-->
-    <!--        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>-->
-    <!--        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>-->
-    <!--        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>-->
-    <!--    </style>-->
-
-    <!--    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">-->
-    <!--        <item name="android:fontFamily">@font/poppins</item>-->
-    <!--    </style>-->
-
-    <!--    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">-->
-    <!--        <item name="android:fontFamily">@font/poppins</item>-->
-    <!--    </style>-->
-
-    <!--    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">-->
-    <!--        <item name="android:fontFamily">@font/poppins</item>-->
-    <!--    </style>-->
+    <style name="TextInputEditText.FilledBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
 
     <!--    Checkbox-->
     <style name="Checkbox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
         <item name="colorOnSurface">@color/whitesmoke</item>
         <item name="colorOnSecondary">@color/whitesmoke</item>
         <item name="buttonTint">@color/silver</item>
-        <item name="android:textAppearance">@style/T16NobelNormal</item>
+        <item name="android:textAppearance">@style/TextAppearance.Trifler.T16NobelNormal</item>
         <item name="android:textColor">@color/nobel</item>
     </style>
 

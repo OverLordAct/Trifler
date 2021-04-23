@@ -24,7 +24,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/firstNameTextLayout"
-            style="@style/TextInputLayout.FilledBox.CustomFont"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="57dp"
@@ -44,7 +44,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lastNameTextLayout"
-            style="@style/TextInputLayout.FilledBox.CustomFont"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="57dp"
@@ -62,11 +62,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTextLayout"
-            style="@style/TextInputLayout.FilledBox.CustomFont"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/signup_email"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
             app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"
             app:layout_constraintTop_toBottomOf="@id/firstNameTextLayout">
@@ -80,15 +81,34 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneTextLayout"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/signup_phone_number"
+            app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
+            app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/firstNameTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTextLayout"
-            style="@style/TextInputLayout.FilledBox.CustomFont"
+            style="@style/Widget.Trifler.TextInputLayout.FilledBox.CustomFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/signup_password"
             app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
             app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"
-            app:layout_constraintTop_toBottomOf="@id/emailTextLayout">
+            app:layout_constraintTop_toBottomOf="@id/phoneTextLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
@@ -108,8 +128,8 @@
             android:paddingStart="9dp"
             android:paddingEnd="9dp"
             android:text="@string/signup_terms_and_conditions"
-            app:layout_constraintEnd_toEndOf="@id/emailTextLayout"
-            app:layout_constraintStart_toStartOf="@id/emailTextLayout"
+            app:layout_constraintEnd_toEndOf="@id/phoneTextLayout"
+            app:layout_constraintStart_toStartOf="@id/phoneTextLayout"
             app:layout_constraintTop_toBottomOf="@id/passwordTextLayout" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
@@ -122,13 +142,13 @@
             android:paddingStart="9dp"
             android:paddingEnd="9dp"
             android:text="@string/signup_updated"
-            app:layout_constraintEnd_toEndOf="@id/emailTextLayout"
-            app:layout_constraintStart_toStartOf="@id/emailTextLayout"
+            app:layout_constraintEnd_toEndOf="@id/phoneTextLayout"
+            app:layout_constraintStart_toStartOf="@id/phoneTextLayout"
             app:layout_constraintTop_toBottomOf="@id/termsCheckbox" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signUpEmailButton"
-            style="@style/RoundedFilledButton"
+            style="@style/Widget.Trifler.Button.Rounded"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -149,7 +169,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signUpGoogleButton"
-            style="@style/RoundedFilledButton"
+            style="@style/Widget.Trifler.Button.Rounded"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
