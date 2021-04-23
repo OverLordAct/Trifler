@@ -17,3 +17,15 @@ annotation class CoroutinesAPI
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class NonCoroutinesAPI
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class BaseClient
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class AuthenticatedClient
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class UnauthenticatedAPI
