@@ -107,6 +107,11 @@
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
+    <style name="TextAppearance.Trifler.T16Radical.Medium" parent="TextAppearance.Trifler.DimGrayMedium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/radicalred</item>
+    </style>
+
     <!-- Button -->
     <style name="Widget.Trifler.Button.Rounded.Base" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">999dp</item>

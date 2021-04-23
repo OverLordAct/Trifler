@@ -38,6 +38,8 @@
     <string name="signup_password_blank">Password cannot be empty</string>
     <string name="signup_failure">Unable to Signup, Please Try Again</string>
     <string name="signup_termsandconditions_unchecked">Terms and conditions not checked</string>
+    <string name="signup_phone_number">Phone Number</string>
+    <string name="signup_phone_number_blank">Phone Number cannot be empty</string>
 
     <!-- Dashboard-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -78,4 +80,15 @@
     <string name="contact_step_3_category_hint">Category In</string>
     <string name="contact_step_3_duration_hint">Temporary for</string>
     <string name="contact_step_3_cta">Add Contact</string>
+
+    <!-- Category -->
+    <string name="category_step_1_title">Add a New Category</string>
+    <string name="category_step_1_category_input_hint">Enter Category Name</string>
+    <string name="category_step_1_cta">Add Category</string>
+    <string name="category_step_2_as_divider">AS</string>
+    <string name="category_card_header">Saved as</string>
+    <string name="category_step_2_cta">Dashboard</string>
+    <string name="category_step_1_empty_error">Category name cannot be empty</string>
+    <string name="category_step_1_duplicate_error">Category name already exists</string>
+    <string name="category_step_1_network_error">Some error occurred, please try again</string>
 </resources>
