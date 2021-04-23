@@ -1,6 +1,5 @@
 package com.meshdesh.trifler.sigin.viewmodel
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,17 +7,18 @@ import com.meshdesh.trifler.R
 import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.localize.Localize
 import com.meshdesh.trifler.common.storage.account.AccountManager
-import com.meshdesh.trifler.common.storage.token.TokenManager
 import com.meshdesh.trifler.sigin.data.entity.SigninRequest
 import com.meshdesh.trifler.sigin.data.repository.SigninRepository
 import com.meshdesh.trifler.sigin.viewmodel.SigninViewModel.SigninStatus
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SigninViewModelImpl @ViewModelInject constructor(
+@HiltViewModel
+class SigninViewModelImpl @Inject constructor(
     private val loginRepository: SigninRepository,
     private val localize: Localize,
-    private val accountManager: AccountManager,
-    private val tokenManager: TokenManager
+    private val accountManager: AccountManager
 ) : ViewModel(), SigninViewModel {
 
     override var signinStatusLiveData: MutableLiveData<SigninStatus> =
@@ -50,11 +50,11 @@ class SigninViewModelImpl @ViewModelInject constructor(
                     val userData = login.data?.user
                     userData?.let {
                         accountManager.login(
-                            it.name,
-                            it.email
+                            it.userId,
+                            it.phone,
+                            it.accessToken,
+                            it.refreshToken
                         )
-                        tokenManager.setRefreshToken(it.refreshToken)
-                        tokenManager.setAccessToken(it.accessToken)
                     }
                     signinStatusLiveData.value =
                         SigninStatus.Success(login.data?.message.toString())

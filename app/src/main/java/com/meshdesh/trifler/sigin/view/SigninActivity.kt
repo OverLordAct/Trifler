@@ -49,6 +49,7 @@ class SigninActivity : AppCompatActivity() {
                 // TODO Redirect
                 binding.progress.setGone()
                 Toast.makeText(this, signinStatus.message, Toast.LENGTH_SHORT).show()
+
                 startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
             }
@@ -71,11 +72,16 @@ class SigninActivity : AppCompatActivity() {
 
     private fun setHeader() {
         binding.header.setButtonClickListener {
-            startActivity(SignupActivity.getInstance(this))
+            openSignup()
         }
         binding.header.setSecondaryButtonClickListener {
-            startActivity(SignupActivity.getInstance(this))
+            openSignup()
         }
+    }
+
+    private fun openSignup() {
+        startActivity(SignupActivity.getInstance(this))
+        finish()
     }
 
     private fun startLogin() {
@@ -86,11 +92,11 @@ class SigninActivity : AppCompatActivity() {
         val email = binding.emailText.text.toString()
         val password = binding.passwordText.text.toString()
 
-        // viewModel.startSignin(email, password)
+        viewModel.startSignin(email, password)
 
-        binding.progress.setGone()
-        // Toast.makeText(this, signinStatus.message, Toast.LENGTH_SHORT).show()
-        startActivity(Intent(this, DashboardActivity::class.java))
-        finish()
+        // binding.progress.setGone()
+        // // Toast.makeText(this, signinStatus.message, Toast.LENGTH_SHORT).show()
+        // startActivity(Intent(this, DashboardActivity::class.java))
+        // finish()
     }
 }

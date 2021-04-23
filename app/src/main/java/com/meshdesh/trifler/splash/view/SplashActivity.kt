@@ -2,11 +2,13 @@ package com.meshdesh.trifler.splash.view
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
+import com.meshdesh.trifler.dashboard.view.DashboardActivity
 import com.meshdesh.trifler.onboarding.view.OnboardingActivity
 import com.meshdesh.trifler.sigin.view.SigninActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
@@ -43,8 +45,8 @@ class SplashActivity : AppCompatActivity() {
             is SplashActivityViewModel.AccountStatus.Authenticated -> {
                 // TODO Redirect to Dashboard
                 Toast.makeText(this, "Authenticated", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, DashboardActivity::class.java))
             }
-
             is SplashActivityViewModel.AccountStatus.Unauthenticated -> {
                 when (status.isNew) {
                     true -> {
@@ -58,8 +60,8 @@ class SplashActivity : AppCompatActivity() {
                     R.animator.appears_from_right,
                     R.animator.disappear_to_left
                 )
-                finish()
             }
         }
+        finish()
     }
 }

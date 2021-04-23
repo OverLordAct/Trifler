@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.meshdesh.trifler.category.view.AddCategoryActivity
 import com.meshdesh.trifler.contact.view.ContactActivity
 import com.meshdesh.trifler.databinding.FragmentOnboardingDashboardBinding
-import com.meshdesh.trifler.util.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,7 +36,7 @@ class OnboardingDashboardFragment : Fragment() {
             }
 
             it.makeNewCategoriesCard.setOnClickListener {
-                requireContext().showToast("Clicked!")
+                startActivity(Intent(activity, AddCategoryActivity::class.java))
             }
         }
     }
