@@ -49,6 +49,7 @@ class SignupActivity : AppCompatActivity() {
             val email = binding.email.text?.toString() ?: ""
             val password = binding.password.text?.toString() ?: ""
             val conditionCheck = binding.termsCheckbox.isChecked
+            val phoneNumber = binding.phone.text?.toString() ?: ""
 
             binding.firstNameTextLayout.isErrorEnabled = false
             binding.lastNameTextLayout.isErrorEnabled = false
@@ -56,7 +57,7 @@ class SignupActivity : AppCompatActivity() {
             binding.passwordTextLayout.isErrorEnabled = false
             binding.termsCheckbox.error = null
 
-            viewModel.signup(firstName, lastName, email, password, conditionCheck)
+            viewModel.signup(firstName, lastName, email, password, conditionCheck, phoneNumber)
         }
     }
 
@@ -80,11 +81,16 @@ class SignupActivity : AppCompatActivity() {
 
     private fun setHeader() {
         binding.header.setButtonClickListener {
-            startActivity(SigninActivity.getInstance(this))
+            openSignin()
         }
         binding.header.setSecondaryButtonClickListener {
-            startActivity(SigninActivity.getInstance(this))
+            openSignin()
         }
+    }
+
+    private fun openSignin() {
+        startActivity(SigninActivity.getInstance(this))
+        finish()
     }
 
     private fun signupStatus(status: SignupViewModel.SignupStatus) {
@@ -101,6 +107,9 @@ class SignupActivity : AppCompatActivity() {
             is SignupViewModel.SignupStatus.Success -> {
                 binding.progress.setGone()
                 Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
+
+                startActivity(SigninActivity.getInstance(this))
+                finish()
             }
 
             is SignupViewModel.SignupStatus.Empty.FirstName -> {
@@ -131,6 +140,12 @@ class SignupActivity : AppCompatActivity() {
                 binding.progress.setGone()
                 binding.termsCheckbox.error =
                     getString(R.string.signup_termsandconditions_unchecked)
+            }
+
+            is SignupViewModel.SignupStatus.Empty.Phone -> {
+                binding.progress.setGone()
+                binding.phoneTextLayout.isErrorEnabled = true
+                binding.phoneTextLayout.error = getString(R.string.signup_phone_number_blank)
             }
         }
     }
