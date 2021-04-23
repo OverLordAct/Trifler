@@ -6,14 +6,14 @@ sealed class SigninResponse {
     data class Success(
         @SerializedName("status") val status: String,
         @SerializedName("message") val message: String,
-        @SerializedName("data") val user: User
+        @SerializedName("user") val user: User
     ) : SigninResponse() {
         data class User(
-            @SerializedName("password") private val password: String,
-            @SerializedName("email") val email: String,
+            @SerializedName("userId") val userId: String,
             @SerializedName("name") val name: String,
-            @SerializedName("refreshToken") val refreshToken: String,
-            @SerializedName("accessToken") val accessToken: String
+            @SerializedName("contactNo") val phone: String,
+            @SerializedName("accessToken") val accessToken: String,
+            @SerializedName("refreshToken") val refreshToken: String
         )
     }
 
