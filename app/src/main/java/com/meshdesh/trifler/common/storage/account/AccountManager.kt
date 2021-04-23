@@ -1,25 +1,33 @@
 package com.meshdesh.trifler.common.storage.account
 
-import com.meshdesh.trifler.common.data.entity.Credentials
+import com.meshdesh.trifler.common.storage.token.TokenManager
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class AccountManager @Inject constructor(
-    private val localStorage: LocalStorage
+    private val localStorage: LocalStorage,
+    private val tokenManager: TokenManager
 ) {
-    // TODO Manage loggedIn
     val isLoggedIn: Boolean
-        get() = (localStorage.get<Credentials>(KEY.USERNAME) != null)
+        get() {
+            return localStorage.get<String>(KEY.USERNAME) != null
+        }
 
     val userName: String?
         get() {
-            return if (isLoggedIn) localStorage[KEY.USERNAME] else null
+            return if (isLoggedIn) {
+                localStorage[KEY.USERNAME]
+            } else {
+                null
+            }
         }
 
-    fun login(username: String, email: String) {
+    fun login(username: String, email: String, accessToken: String, refreshToken: String) {
         localStorage[KEY.USERNAME] = username
-        localStorage[KEY.EMAIL] = email
+        localStorage[KEY.PHONE] = email
+        tokenManager.setAccessToken(accessToken)
+        tokenManager.setRefreshToken(refreshToken)
     }
 
     fun logout() {
