@@ -23,7 +23,7 @@
             android:name=".signup.view.SignupActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".sigin.view.SigninActivity"
+            android:name=".login.view.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".splash.view.SplashActivity"

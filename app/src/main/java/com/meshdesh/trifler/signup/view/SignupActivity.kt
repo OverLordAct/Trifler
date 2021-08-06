@@ -11,7 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
 import com.meshdesh.trifler.databinding.ActivitySignupBinding
-import com.meshdesh.trifler.sigin.view.SigninActivity
+import com.meshdesh.trifler.login.view.LoginActivity
 import com.meshdesh.trifler.signup.viewModel.SignupViewModel
 import com.meshdesh.trifler.signup.viewModel.SignupViewModelImpl
 import com.meshdesh.trifler.util.setGone
@@ -89,7 +89,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun openSignin() {
-        startActivity(SigninActivity.getInstance(this))
+        startActivity(LoginActivity.getInstance(this))
         finish()
     }
 
@@ -108,7 +108,7 @@ class SignupActivity : AppCompatActivity() {
                 binding.progress.setGone()
                 Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
 
-                startActivity(SigninActivity.getInstance(this))
+                startActivity(LoginActivity.getInstance(this))
                 finish()
             }
 

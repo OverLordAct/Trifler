@@ -9,8 +9,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.meshdesh.trifler.R
 import com.meshdesh.trifler.dashboard.view.DashboardActivity
+import com.meshdesh.trifler.login.view.LoginActivity
 import com.meshdesh.trifler.onboarding.view.OnboardingActivity
-import com.meshdesh.trifler.sigin.view.SigninActivity
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModel
 import com.meshdesh.trifler.splash.viewmodel.SplashActivityViewModelImpl
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,7 +53,7 @@ class SplashActivity : AppCompatActivity() {
                         startActivity(OnboardingActivity.getInstance(this))
                     }
                     false -> {
-                        startActivity(SigninActivity.getInstance(this))
+                        startActivity(LoginActivity.getInstance(this))
                     }
                 }
                 overridePendingTransition(

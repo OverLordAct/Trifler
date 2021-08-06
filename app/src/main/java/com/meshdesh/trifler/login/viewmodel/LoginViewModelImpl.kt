@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.sigin.viewmodel
+package com.meshdesh.trifler.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,41 +7,41 @@ import com.meshdesh.trifler.R
 import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.localize.Localize
 import com.meshdesh.trifler.common.storage.account.AccountManager
-import com.meshdesh.trifler.sigin.data.entity.SigninRequest
-import com.meshdesh.trifler.sigin.data.repository.SigninRepository
-import com.meshdesh.trifler.sigin.viewmodel.SigninViewModel.SigninStatus
+import com.meshdesh.trifler.login.data.entity.LoginRequest
+import com.meshdesh.trifler.login.data.repository.LoginRepository
+import com.meshdesh.trifler.login.viewmodel.LoginViewModel.LoginStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SigninViewModelImpl @Inject constructor(
-    private val loginRepository: SigninRepository,
+class LoginViewModelImpl @Inject constructor(
+    private val loginRepository: LoginRepository,
     private val localize: Localize,
     private val accountManager: AccountManager
-) : ViewModel(), SigninViewModel {
+) : ViewModel(), LoginViewModel {
 
-    override var signinStatusLiveData: MutableLiveData<SigninStatus> =
+    override var loginStatusLiveData: MutableLiveData<LoginStatus> =
         MutableLiveData()
 
-    override fun startSignin(email: String, password: String) {
-        signinStatusLiveData.value = SigninStatus.Loading
+    override fun startLogin(email: String, password: String) {
+        loginStatusLiveData.value = LoginStatus.Loading
 
         var flag = false
 
         if (email.isBlank()) {
-            signinStatusLiveData.value = SigninStatus.Blank.Email
+            loginStatusLiveData.value = LoginStatus.Blank.Email
             flag = true
         }
 
         if (password.isBlank()) {
-            signinStatusLiveData.value = SigninStatus.Blank.Password
+            loginStatusLiveData.value = LoginStatus.Blank.Password
             flag = true
         }
 
         if (flag) return
 
-        val loginRequest = SigninRequest(email, password)
+        val loginRequest = LoginRequest(email, password)
 
         viewModelScope.launch {
 
@@ -56,16 +56,16 @@ class SigninViewModelImpl @Inject constructor(
                             it.refreshToken
                         )
                     }
-                    signinStatusLiveData.value =
-                        SigninStatus.Success(login.data?.message.toString())
+                    loginStatusLiveData.value =
+                        LoginStatus.Success(login.data?.message.toString())
                 }
                 is Result.ServerError -> {
-                    signinStatusLiveData.value =
-                        SigninStatus.Failure(login.body?.message.toString())
+                    loginStatusLiveData.value =
+                        LoginStatus.Failure(login.body?.message.toString())
                 }
                 is Result.NetworkError, is Result.UnknownError -> {
-                    signinStatusLiveData.value =
-                        SigninStatus.Failure(localize.localize(R.string.login_failure))
+                    loginStatusLiveData.value =
+                        LoginStatus.Failure(localize.localize(R.string.login_failure))
                 }
             }
         }

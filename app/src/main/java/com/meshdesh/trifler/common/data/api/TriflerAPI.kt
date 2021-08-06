@@ -4,8 +4,8 @@ import com.meshdesh.trifler.category.data.entity.AddCategoryRequestBody
 import com.meshdesh.trifler.common.data.entity.GenericErrorResponse
 import com.meshdesh.trifler.common.data.entity.GenericSuccessResponse
 import com.meshdesh.trifler.common.data.entity.Result
-import com.meshdesh.trifler.sigin.data.entity.SigninRequest
-import com.meshdesh.trifler.sigin.data.entity.SigninResponse
+import com.meshdesh.trifler.login.data.entity.LoginRequest
+import com.meshdesh.trifler.login.data.entity.LoginResponse
 import com.meshdesh.trifler.signup.data.entity.SignupRequest
 import com.meshdesh.trifler.signup.data.entity.SignupResponse
 import retrofit2.http.Body
@@ -15,7 +15,7 @@ interface TriflerAPI {
 
     interface UnauthenticatedAPI {
         @POST("/api/user/auth/signin")
-        suspend fun signin(@Body signinRequest: SigninRequest): Result<SigninResponse.Success, SigninResponse.Failure>
+        suspend fun login(@Body loginRequest: LoginRequest): Result<LoginResponse.Success, LoginResponse.Failure>
 
         @POST("/api/user/auth/signup")
         suspend fun signup(@Body signupRequest: SignupRequest): Result<SignupResponse.Success, SignupResponse.Failure>
