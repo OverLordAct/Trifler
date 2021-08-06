@@ -4,8 +4,8 @@ import com.meshdesh.trifler.category.data.repository.CategoryRepository
 import com.meshdesh.trifler.category.data.repository.CategoryRepositoryImpl
 import com.meshdesh.trifler.common.auth.repository.TokenRepository
 import com.meshdesh.trifler.common.auth.repository.TokenRepositoryImpl
-import com.meshdesh.trifler.sigin.data.repository.SigninRepository
-import com.meshdesh.trifler.sigin.data.repository.SigninRepositoryImpl
+import com.meshdesh.trifler.login.data.repository.LoginRepository
+import com.meshdesh.trifler.login.data.repository.LoginRepositoryImpl
 import com.meshdesh.trifler.signup.data.repository.SignupRepository
 import com.meshdesh.trifler.signup.data.repository.SignupRepositoryImpl
 import dagger.Binds
@@ -32,8 +32,8 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun providesSigninRepository(
-        signinRepository: SigninRepositoryImpl
-    ): SigninRepository
+        signinRepository: LoginRepositoryImpl
+    ): LoginRepository
 
     @Singleton
     @Binds
