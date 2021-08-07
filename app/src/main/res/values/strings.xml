@@ -11,11 +11,11 @@
     <string name="login_title">Welcome Back</string>
     <string name="login_subtitle_primary">Don\'t have an account?</string>
     <string name="login_subtitle_secondary">Sign up</string>
-    <string name="login_email_field">Email</string>
+    <string name="login_phone_field">Phone Number</string>
     <string name="login_password_field">Password</string>
     <string name="or">OR</string>
     <string name="login_redirect_button">Sign up</string>
-    <string name="email_blank">Email cannot be blank</string>
+    <string name="phone_blank">Phone Number cannot be blank</string>
     <string name="password_blank">Password cannot be blank</string>
     <string name="login_failure">Unable to Login, Please Try Again</string>
 
@@ -26,18 +26,18 @@
     <string name="signup_subtitle_secondary">Sign In</string>
     <string name="signup_first_name">First Name</string>
     <string name="signup_last_name">Last Name</string>
-    <string name="signup_email">Email</string>
+    <string name="signup_phone">Phone Number</string>
     <string name="signup_password">Password</string>
     <string name="signup_terms_and_conditions"><![CDATA[I agree to Term & Condition and Privacy Policy]]></string>
     <string name="signup_updated">Keep me updated with new versions</string>
-    <string name="signup_primary_button">Sign up with email</string>
+    <string name="signup_primary_button">Sign up</string>
     <string name="signup_secondary_button">Sign up with Google</string>
     <string name="signup_firstname_blank">First Name cannot be empty</string>
     <string name="signup_lastname_blank">Last Name cannot be empty</string>
-    <string name="signup_email_blank">Email cannot be empty</string>
+    <string name="signup_phone_blank">Phone Number cannot be empty</string>
     <string name="signup_password_blank">Password cannot be empty</string>
     <string name="signup_failure">Unable to Signup, Please Try Again</string>
-    <string name="signup_termsandconditions_unchecked">Terms and conditions not checked</string>
+    <string name="signup_tnc_unchecked">Terms and conditions not checked</string>
     <string name="signup_phone_number">Phone Number</string>
     <string name="signup_phone_number_blank">Phone Number cannot be empty</string>
 
@@ -46,7 +46,7 @@
     <string name="welcome">Welcome</string>
     <string name="onboarding_dashboard_heading">How would like to start?</string>
     <string name="onboarding_dashboardcard_header_one">Add Contact</string>
-    <string name="onboarding_dashboardcard_body_one">You can add an email or mobile number as temporary.</string>
+    <string name="onboarding_dashboardcard_body_one">You can add an phone number as temporary.</string>
     <string name="onboarding_dashboardcard_header_two">Make new categories</string>
     <string name="onboarding_dashboardcard_body_two">Create new categories for your contacts and access them.</string>
     <string name="onboarded_dashboardcard_primary">I want to..</string>
@@ -75,7 +75,7 @@
     <string name="contact_step_2_cta_2">Send Request</string>
     <string name="contact_step_3_title">Add a Contact</string>
     <string name="contact_step_3_subtitle">Enter Contact Information</string>
-    <string name="contact_step_3_phone_number_title">CONTACT NO.</string>
+    <string name="contact_step_3_phone_number_title">PHONE NO.</string>
     <string name="contact_step_3_input_name">Contact Name</string>
     <string name="contact_step_3_category_hint">Category In</string>
     <string name="contact_step_3_duration_hint">Temporary for</string>

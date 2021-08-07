@@ -14,11 +14,11 @@ import retrofit2.http.POST
 interface TriflerAPI {
 
     interface UnauthenticatedAPI {
-        @POST("/api/user/auth/signin")
+        @POST("auth/signin")
         suspend fun login(@Body loginRequest: LoginRequest): Result<LoginResponse.Success, GenericErrorResponse>
 
-        @POST("/api/user/auth/signup")
-        suspend fun signup(@Body signupRequest: SignupRequest): Result<SignupResponse.Success, SignupResponse.Failure>
+        @POST("auth/signup")
+        suspend fun signup(@Body signupRequest: SignupRequest): Result<SignupResponse.Success, GenericErrorResponse>
     }
 
     @POST("/api/user/category/add-category")

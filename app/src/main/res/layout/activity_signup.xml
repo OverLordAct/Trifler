@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         tools:context=".signup.view.SignupActivity">
 
-        <com.meshdesh.trifler.common.customview.SigninUpHeader
+        <com.meshdesh.trifler.common.customview.LoginHeader
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/signup_email"
+            android:hint="@string/signup_phone"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"
             app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"

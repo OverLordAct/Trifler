@@ -22,9 +22,7 @@ interface SignupViewModel {
             val message: String
         ) : SignupStatus()
 
-        data class Success(
-            val message: String
-        ) : SignupStatus()
+        object Success : SignupStatus()
 
         sealed class Empty : SignupStatus() {
             object FirstName : Empty()

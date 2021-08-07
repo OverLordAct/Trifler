@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.meshdesh.trifler.R
 import com.meshdesh.trifler.databinding.CustomSigninSignupHeaderBinding
 
-class SigninUpHeader(
+class LoginHeader(
     context: Context,
     attr: AttributeSet
 ) : ConstraintLayout(context, attr) {
@@ -18,11 +18,11 @@ class SigninUpHeader(
         CustomSigninSignupHeaderBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
-        context.obtainStyledAttributes(attr, R.styleable.SigninUpHeader).apply {
-            setButtonText(getString(R.styleable.SigninUpHeader_buttonText).toString())
-            setTitle(getString(R.styleable.SigninUpHeader_titleText).toString())
-            setSubtitlePrimary(getString(R.styleable.SigninUpHeader_subtitlePrimaryText).toString())
-            setSubtitleSecondary(getString(R.styleable.SigninUpHeader_subtitleSecondaryText).toString())
+        context.obtainStyledAttributes(attr, R.styleable.LoginHeader).apply {
+            setButtonText(getString(R.styleable.LoginHeader_buttonText).toString())
+            setTitle(getString(R.styleable.LoginHeader_titleText).toString())
+            setSubtitlePrimary(getString(R.styleable.LoginHeader_subtitlePrimaryText).toString())
+            setSubtitleSecondary(getString(R.styleable.LoginHeader_subtitleSecondaryText).toString())
             primaryButtonClicked?.let { setButtonClickListener(it) }
             recycle()
         }

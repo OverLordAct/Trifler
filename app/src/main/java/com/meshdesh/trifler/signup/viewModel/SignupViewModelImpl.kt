@@ -42,11 +42,6 @@ class SignupViewModelImpl @Inject constructor(
             flag = true
         }
 
-        // if (email.isBlank()) {
-        //     signupStatusLiveData.value = SignupViewModel.SignupStatus.Empty.Email
-        //     flag = true
-        // }
-
         if (password.isBlank()) {
             signupStatusLiveData.value = SignupViewModel.SignupStatus.Empty.Password
             flag = true
@@ -72,7 +67,7 @@ class SignupViewModelImpl @Inject constructor(
             when (val response = signupRepository.signup(signupRequest)) {
                 is Result.Success -> {
                     signupStatusLiveData.value =
-                        SignupViewModel.SignupStatus.Success(response.data?.message.toString())
+                        SignupViewModel.SignupStatus.Success
                 }
                 is Result.ServerError -> {
                     signupStatusLiveData.value =

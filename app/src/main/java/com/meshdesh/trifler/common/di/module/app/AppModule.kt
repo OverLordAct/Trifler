@@ -31,7 +31,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class AppModule {
 
-    private val baseUrl = "https://trifler.herokuapp.com"
+    private val baseUrl = "https://trifler.herokuapp.com/api/v1/user/"
 
     @Singleton
     @Provides
