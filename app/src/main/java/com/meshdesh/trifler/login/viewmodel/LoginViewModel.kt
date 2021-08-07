@@ -8,7 +8,7 @@ interface LoginViewModel {
     fun startLogin(email: String, password: String)
 
     sealed class LoginStatus {
-        data class Success(val message: String) : LoginStatus()
+        object Success : LoginStatus()
 
         data class Failure(
             val message: String
