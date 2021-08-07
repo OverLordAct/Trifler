@@ -81,14 +81,14 @@ class SignupActivity : AppCompatActivity() {
 
     private fun setHeader() {
         binding.header.setButtonClickListener {
-            openSignin()
+            openLogin()
         }
         binding.header.setSecondaryButtonClickListener {
-            openSignin()
+            openLogin()
         }
     }
 
-    private fun openSignin() {
+    private fun openLogin() {
         startActivity(LoginActivity.getInstance(this))
         finish()
     }
@@ -106,7 +106,6 @@ class SignupActivity : AppCompatActivity() {
 
             is SignupViewModel.SignupStatus.Success -> {
                 binding.progress.setGone()
-                Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
 
                 startActivity(LoginActivity.getInstance(this))
                 finish()
@@ -127,7 +126,7 @@ class SignupActivity : AppCompatActivity() {
             is SignupViewModel.SignupStatus.Empty.Email -> {
                 binding.progress.setGone()
                 binding.emailTextLayout.isErrorEnabled = true
-                binding.emailTextLayout.error = getString(R.string.signup_email_blank)
+                binding.emailTextLayout.error = getString(R.string.signup_phone_blank)
             }
 
             is SignupViewModel.SignupStatus.Empty.Password -> {
@@ -139,7 +138,7 @@ class SignupActivity : AppCompatActivity() {
             is SignupViewModel.SignupStatus.Empty.Condition -> {
                 binding.progress.setGone()
                 binding.termsCheckbox.error =
-                    getString(R.string.signup_termsandconditions_unchecked)
+                    getString(R.string.signup_tnc_unchecked)
             }
 
             is SignupViewModel.SignupStatus.Empty.Phone -> {

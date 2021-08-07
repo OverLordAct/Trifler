@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
             is LoginViewModel.LoginStatus.Blank.Email -> {
                 binding.progress.setGone()
-                binding.emailContainer.error = getString(R.string.email_blank)
+                binding.emailContainer.error = getString(R.string.phone_blank)
             }
             is LoginViewModel.LoginStatus.Blank.Password -> {
                 binding.progress.setGone()

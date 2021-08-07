@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         tools:context=".login.view.LoginActivity">
 
-        <com.meshdesh.trifler.common.customview.SigninUpHeader
+        <com.meshdesh.trifler.common.customview.LoginHeader
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="55dp"
             android:layout_marginTop="40dp"
-            android:hint="@string/login_email_field"
+            android:hint="@string/login_phone_field"
             app:endIconMode="clear_text"
             app:endIconTint="@color/nobel"
             app:errorEnabled="true"
