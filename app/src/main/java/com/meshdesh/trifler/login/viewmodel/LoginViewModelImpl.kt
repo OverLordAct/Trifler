@@ -44,10 +44,9 @@ class LoginViewModelImpl @Inject constructor(
         val loginRequest = LoginRequest(email, password)
 
         viewModelScope.launch {
-
             when (val login = loginRepository.login(loginRequest)) {
                 is Result.Success -> {
-                    val userData = login.data?.user
+                    val userData = login.data?.payload
                     userData?.let {
                         accountManager.login(
                             it.userId,
@@ -57,11 +56,13 @@ class LoginViewModelImpl @Inject constructor(
                         )
                     }
                     loginStatusLiveData.value =
-                        LoginStatus.Success(login.data?.message.toString())
+                        LoginStatus.Success
                 }
                 is Result.ServerError -> {
                     loginStatusLiveData.value =
-                        LoginStatus.Failure(login.body?.message.toString())
+                        LoginStatus.Failure(
+                            login.body?.message ?: localize.localize(R.string.login_failure)
+                        )
                 }
                 is Result.NetworkError, is Result.UnknownError -> {
                     loginStatusLiveData.value =

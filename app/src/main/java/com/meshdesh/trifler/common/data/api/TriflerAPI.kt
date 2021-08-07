@@ -15,7 +15,7 @@ interface TriflerAPI {
 
     interface UnauthenticatedAPI {
         @POST("/api/user/auth/signin")
-        suspend fun login(@Body loginRequest: LoginRequest): Result<LoginResponse.Success, LoginResponse.Failure>
+        suspend fun login(@Body loginRequest: LoginRequest): Result<LoginResponse.Success, GenericErrorResponse>
 
         @POST("/api/user/auth/signup")
         suspend fun signup(@Body signupRequest: SignupRequest): Result<SignupResponse.Success, SignupResponse.Failure>

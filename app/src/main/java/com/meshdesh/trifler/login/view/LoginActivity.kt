@@ -48,7 +48,6 @@ class LoginActivity : AppCompatActivity() {
             is LoginViewModel.LoginStatus.Success -> {
                 // TODO Redirect
                 binding.progress.setGone()
-                Toast.makeText(this, loginStatus.message, Toast.LENGTH_SHORT).show()
 
                 startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
