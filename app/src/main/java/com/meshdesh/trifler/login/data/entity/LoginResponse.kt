@@ -4,11 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 sealed class LoginResponse {
     data class Success(
-        @SerializedName("status") val status: String,
-        @SerializedName("message") val message: String,
-        @SerializedName("user") val user: User
+        @SerializedName("status") val status: Boolean,
+        @SerializedName("payload") val payload: Payload,
     ) : LoginResponse() {
-        data class User(
+        data class Payload(
             @SerializedName("userId") val userId: String,
             @SerializedName("name") val name: String,
             @SerializedName("contactNo") val phone: String,
@@ -16,9 +15,4 @@ sealed class LoginResponse {
             @SerializedName("refreshToken") val refreshToken: String
         )
     }
-
-    data class Failure(
-        val status: String,
-        val message: String
-    ) : LoginResponse()
 }
