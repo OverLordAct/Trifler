@@ -4,21 +4,15 @@ import com.google.gson.annotations.SerializedName
 
 sealed class SignupResponse {
     data class Success(
-        @SerializedName("status") val status: String,
-        @SerializedName("message") val message: String,
-        @SerializedName("data") val user: User
+        @SerializedName("status") val status: Boolean,
+        @SerializedName("data") val payload: Payload
     ) {
-        data class User(
-            @SerializedName("password") private val password: String,
-            @SerializedName("email") val email: String,
+        data class Payload(
+            @SerializedName("userId") private val userId: String,
             @SerializedName("name") val name: String,
-            @SerializedName("refreshToken") val refreshToken: String,
-            @SerializedName("accessToken") val accessToken: String
+            @SerializedName("contactNo") val phoneNo: String,
+            @SerializedName("accessToken") val accessToken: String,
+            @SerializedName("refreshToken") val refreshToken: String
         )
     }
-
-    data class Failure(
-        val status: String,
-        val message: String
-    )
 }
