@@ -47,7 +47,7 @@
     <string name="onboarding_dashboard_heading">How would like to start?</string>
     <string name="onboarding_dashboardcard_header_one">Add Contact</string>
     <string name="onboarding_dashboardcard_body_one">You can add an phone number as temporary.</string>
-    <string name="onboarding_dashboardcard_header_two">Make new categories</string>
+    <string name="onboarding_dashboardcard_header_two">Add a Category</string>
     <string name="onboarding_dashboardcard_body_two">Create new categories for your contacts and access them.</string>
     <string name="onboarded_dashboardcard_primary">I want to..</string>
     <string name="onboarded_dashboard_recycler_header">My categories</string>
