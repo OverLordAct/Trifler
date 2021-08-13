@@ -1,8 +1,8 @@
 package com.meshdesh.trifler.common.data.api
 
-import com.meshdesh.trifler.category.data.entity.AddCategoryRequestBody
+import com.meshdesh.trifler.category.data.entity.AddCategoryRequest
+import com.meshdesh.trifler.category.data.entity.AddCategoryResponse
 import com.meshdesh.trifler.common.data.entity.GenericErrorResponse
-import com.meshdesh.trifler.common.data.entity.GenericSuccessResponse
 import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.login.data.entity.LoginRequest
 import com.meshdesh.trifler.login.data.entity.LoginResponse
@@ -21,6 +21,6 @@ interface TriflerAPI {
         suspend fun signup(@Body signupRequest: SignupRequest): Result<SignupResponse.Success, GenericErrorResponse>
     }
 
-    @POST("/api/user/category/add-category")
-    suspend fun addCategory(@Body categoryRequest: AddCategoryRequestBody): Result<GenericSuccessResponse, GenericErrorResponse>
+    @POST("category")
+    suspend fun addCategory(@Body categoryRequest: AddCategoryRequest): Result<AddCategoryResponse, GenericErrorResponse>
 }
