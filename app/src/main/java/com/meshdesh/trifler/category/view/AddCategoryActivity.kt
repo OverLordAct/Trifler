@@ -29,13 +29,7 @@ class AddCategoryActivity : AppCompatActivity() {
                 setInitialFragment()
             }
             is AddCategoryActivityViewModel.CurrentStep.Step2 -> {
-                supportFragmentManager.commit {
-                    val args = currentStep.category
-                    val fragment =
-                        AddCategorySuccessFragment.create(AddCategorySuccessFragment.Args(args))
-                    replace(binding.container.id, fragment)
-                    setReorderingAllowed(true)
-                }
+                showCategoryAddSuccessFragment(currentStep)
             }
             is AddCategoryActivityViewModel.CurrentStep.Step3, AddCategoryActivityViewModel.CurrentStep.Close -> {
                 finish()
@@ -47,6 +41,16 @@ class AddCategoryActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             val fragment = AddCategoryFragment()
             add(binding.container.id, fragment)
+            setReorderingAllowed(true)
+        }
+    }
+
+    private fun showCategoryAddSuccessFragment(currentStep: AddCategoryActivityViewModel.CurrentStep.Step2) {
+        supportFragmentManager.commit {
+            val args = currentStep.category
+            val fragment =
+                AddCategorySuccessFragment.create(AddCategorySuccessFragment.Args(args))
+            replace(binding.container.id, fragment)
             setReorderingAllowed(true)
         }
     }

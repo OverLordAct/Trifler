@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.meshdesh.trifler.category.data.entity.AddCategoryRequestBody
+import com.meshdesh.trifler.category.data.entity.AddCategoryRequest
 import com.meshdesh.trifler.category.data.repository.CategoryRepository
 import com.meshdesh.trifler.common.data.entity.Result
 import com.meshdesh.trifler.common.storage.account.AccountManager
@@ -32,8 +32,8 @@ class AddCategoryFragmentViewModelImpl @Inject constructor(
         } else {
             // TODO: 23-04-2021 Ask what is About field
             val requestBody =
-                AddCategoryRequestBody(
-                    accountManager.userName!!,
+                AddCategoryRequest(
+                    accountManager.userName ?: throw Exception("Username must not be null"),
                     category,
                     ""
                 )
@@ -41,6 +41,7 @@ class AddCategoryFragmentViewModelImpl @Inject constructor(
             viewModelScope.launch {
                 when (categoryRepository.addCategory(requestBody)) {
                     is Result.Success -> {
+                        // TODO: 13-08-2021 Need to store added category in local db
                         _categoryStatus.value =
                             AddCategoryFragmentViewModel.CategoryStatus.Success(category)
                     }

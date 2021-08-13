@@ -14,7 +14,8 @@ class AddCategorySuccessViewModelImpl @Inject constructor(
 ) : ViewModel(), AddCategorySuccessViewModel {
 
     private val args: AddCategorySuccessFragment.Args =
-        savedStateHandle[AddCategorySuccessFragment.EXTRA_CATEGORY_NAME]!!
+        savedStateHandle[AddCategorySuccessFragment.EXTRA_CATEGORY_NAME]
+            ?: throw Exception("Arg must not be null")
 
     private val _statusLiveData = MutableLiveData<AddCategorySuccessViewModel.Status>()
     val statusLiveData: LiveData<AddCategorySuccessViewModel.Status>
