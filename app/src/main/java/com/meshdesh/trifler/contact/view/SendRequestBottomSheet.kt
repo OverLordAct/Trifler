@@ -39,13 +39,13 @@ class SendRequestBottomSheet : BottomSheetDialogFragment() {
 
         binding?.closeButton?.setOnClickListener {
             listener?.onCloseClicked()
-            contactActivityViewModel.onBack(ContactActivityViewModel.CurrentStep.Step2)
+            contactActivityViewModel.onBack(ContactActivityViewModel.UiState.Step2)
             if (!isStateSaved) dismiss() else dismissAllowingStateLoss()
         }
 
         binding?.cta2?.setOnClickListener {
             listener?.onSendRequest()
-            contactActivityViewModel.onNext(ContactActivityViewModel.CurrentStep.Step3)
+            contactActivityViewModel.onNext(ContactActivityViewModel.UiState.Step3)
             if (!isStateSaved) dismiss() else dismissAllowingStateLoss()
         }
     }

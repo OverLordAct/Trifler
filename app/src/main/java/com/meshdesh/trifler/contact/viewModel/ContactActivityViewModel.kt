@@ -4,16 +4,23 @@ import androidx.lifecycle.LiveData
 
 interface ContactActivityViewModel {
 
-    val nextStepStatus: LiveData<CurrentStep>
-    val backStepStatus: LiveData<CurrentStep>
+    val nextStepStatus: LiveData<UiState>
+    val backStepStatus: LiveData<UiState>
 
-    sealed class CurrentStep {
-        object Step1 : CurrentStep()
-        object Step2 : CurrentStep()
-        object Step3 : CurrentStep()
+    sealed class UiState {
+        object Step1 : UiState()
+        data class Step2(
+            val contactNumber: String
+        ) : UiState()
+
+        data class Step3(
+            val contactNumber: String
+        ) : UiState()
+
+        object Step4 : UiState()
     }
 
-    fun onNext(currentStep: CurrentStep)
+    fun onNext(uiState: UiState)
 
-    fun onBack(currentStep: CurrentStep)
+    fun onBack(uiState: UiState)
 }

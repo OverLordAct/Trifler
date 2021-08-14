@@ -20,7 +20,7 @@ class SplashActivityViewModelImpl @ViewModelInject constructor(
     private fun checkLoginStatus() {
         if (accountManager.isLoggedIn) {
             accountStatus.value = SplashActivityViewModel.AccountStatus.Authenticated(
-                accountManager.userName ?: ""
+                accountManager.userId ?: ""
             )
         } else {
             if (featureManager.isFirstTime) {

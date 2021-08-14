@@ -1,6 +1,7 @@
 package com.meshdesh.trifler.contact.view
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +12,25 @@ import com.meshdesh.trifler.R
 import com.meshdesh.trifler.databinding.FragmentAddContactDetailsBinding
 import com.meshdesh.trifler.util.showToast
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.parcel.Parcelize
 
 @AndroidEntryPoint
 class AddContactDetailsFragment : Fragment() {
+
+    companion object {
+        private const val EXTRA_CONTACT_NUMBER = "EXTRA_CONTACT_NUMBER"
+
+        @Parcelize
+        data class Args(val contactNumber: String) : Parcelable
+
+        fun create(args: Args): AddContactDetailsFragment {
+            val fragment = AddContactDetailsFragment()
+            val bundle = Bundle()
+            bundle.putParcelable(EXTRA_CONTACT_NUMBER, args)
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
 
     private var binding: FragmentAddContactDetailsBinding? = null
 
@@ -27,6 +44,10 @@ class AddContactDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val args = arguments?.getParcelable<Args>(EXTRA_CONTACT_NUMBER)
+            ?: throw Exception("Arguments expected here")
+
 
         val items = listOf("Temporary", "Family", "Friends", "Work")
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item_category, items)

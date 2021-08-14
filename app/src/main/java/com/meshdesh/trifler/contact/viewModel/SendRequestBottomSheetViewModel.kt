@@ -1,0 +1,3 @@
+package com.meshdesh.trifler.contact.viewModel
+
+interface SendRequestBottomSheetViewModel

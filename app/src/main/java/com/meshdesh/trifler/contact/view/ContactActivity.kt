@@ -28,17 +28,17 @@ class ContactActivity : AppCompatActivity(), SendRequestBottomSheet.OnClickListe
         viewModel.nextStepStatus.observe(this, ::observeStep)
     }
 
-    private fun observeStep(currentStep: ContactActivityViewModel.CurrentStep) {
-        when (currentStep) {
-            is ContactActivityViewModel.CurrentStep.Step1 -> {
+    private fun observeStep(uiState: ContactActivityViewModel.UiState) {
+        when (uiState) {
+            is ContactActivityViewModel.UiState.Step1 -> {
                 binding.toolbar.visibility = View.GONE
             }
-            is ContactActivityViewModel.CurrentStep.Step2 -> {
+            is ContactActivityViewModel.UiState.Step2 -> {
                 binding.toolbar.visibility = View.GONE
                 val bottomSheet = SendRequestBottomSheet()
                 bottomSheet.show(supportFragmentManager, bottomSheet.tag)
             }
-            is ContactActivityViewModel.CurrentStep.Step3 -> {
+            is ContactActivityViewModel.UiState.Step3 -> {
                 binding.toolbar.visibility = View.GONE
                 onSendRequest()
             }

@@ -32,7 +32,7 @@ class AddContactFragment : Fragment() {
 
     private fun setupButton() {
         binding?.cta?.setOnClickListener {
-            contactActivityViewModel.onNext(ContactActivityViewModel.CurrentStep.Step1)
+            contactActivityViewModel.onNext(ContactActivityViewModel.UiState.Step1)
         }
     }
 

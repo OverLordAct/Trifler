@@ -33,7 +33,7 @@ class AddCategoryFragmentViewModelImpl @Inject constructor(
             // TODO: 23-04-2021 Ask what is About field
             val requestBody =
                 AddCategoryRequest(
-                    accountManager.userName ?: throw Exception("Username must not be null"),
+                    accountManager.userId ?: throw Exception("Username must not be null"),
                     category,
                     ""
                 )
