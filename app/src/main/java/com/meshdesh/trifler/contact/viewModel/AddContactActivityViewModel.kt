@@ -2,10 +2,9 @@ package com.meshdesh.trifler.contact.viewModel
 
 import androidx.lifecycle.LiveData
 
-interface ContactActivityViewModel {
+interface AddContactActivityViewModel {
 
-    val nextStepStatus: LiveData<UiState>
-    val backStepStatus: LiveData<UiState>
+    val currentStepStatus: LiveData<UiState>
 
     sealed class UiState {
         object Step1 : UiState()
@@ -18,9 +17,6 @@ interface ContactActivityViewModel {
         ) : UiState()
 
         object Step4 : UiState()
+        object Finish : UiState()
     }
-
-    fun onNext(uiState: UiState)
-
-    fun onBack(uiState: UiState)
 }

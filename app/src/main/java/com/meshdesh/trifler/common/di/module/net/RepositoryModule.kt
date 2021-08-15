@@ -4,6 +4,8 @@ import com.meshdesh.trifler.category.data.repository.CategoryRepository
 import com.meshdesh.trifler.category.data.repository.CategoryRepositoryImpl
 import com.meshdesh.trifler.common.auth.repository.TokenRepository
 import com.meshdesh.trifler.common.auth.repository.TokenRepositoryImpl
+import com.meshdesh.trifler.contact.repository.ContactRepository
+import com.meshdesh.trifler.contact.repository.ContactRepositoryImpl
 import com.meshdesh.trifler.login.data.repository.LoginRepository
 import com.meshdesh.trifler.login.data.repository.LoginRepositoryImpl
 import com.meshdesh.trifler.signup.data.repository.SignupRepository
@@ -40,4 +42,10 @@ abstract class RepositoryModule {
     abstract fun bindsCategoryRepository(
         categoryRepositoryImpl: CategoryRepositoryImpl
     ): CategoryRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindsContactRepository(
+        contactRepositoryImpl: ContactRepositoryImpl
+    ): ContactRepository
 }

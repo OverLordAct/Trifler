@@ -13,5 +13,6 @@ interface AddContactDetailsViewModel {
         ) : UiState()
 
         object Loading : UiState()
+        object Success : UiState()
     }
 }

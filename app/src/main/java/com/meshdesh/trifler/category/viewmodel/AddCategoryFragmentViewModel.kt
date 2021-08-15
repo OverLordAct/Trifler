@@ -4,14 +4,14 @@ interface AddCategoryFragmentViewModel {
 
     fun addCategory(category: String)
 
-    sealed class CategoryStatus {
-        object Empty : CategoryStatus()
-        object Duplicate : CategoryStatus()
+    sealed class UiState {
+        object Empty : UiState()
+        object Duplicate : UiState()
         data class Success(
             val category: String
-        ) : CategoryStatus()
+        ) : UiState()
 
-        object Error : CategoryStatus()
-        object Loading : CategoryStatus()
+        object Error : UiState()
+        object Loading : UiState()
     }
 }

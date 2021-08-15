@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.meshdesh.trifler.category.view.AddCategoryActivity
-import com.meshdesh.trifler.contact.view.ContactActivity
+import com.meshdesh.trifler.contact.view.AddContactActivity
 import com.meshdesh.trifler.databinding.FragmentOnboardingDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,7 +32,7 @@ class OnboardingDashboardFragment : Fragment() {
     private fun setupButtons() {
         binding?.let {
             it.addContactCard.setCardClickListener {
-                startActivity(Intent(activity, ContactActivity::class.java))
+                startActivity(Intent(activity, AddContactActivity::class.java))
             }
 
             it.makeNewCategoriesCard.setOnClickListener {
