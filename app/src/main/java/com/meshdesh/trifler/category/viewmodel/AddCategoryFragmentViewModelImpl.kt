@@ -18,22 +18,22 @@ class AddCategoryFragmentViewModelImpl @Inject constructor(
     private val accountManager: AccountManager
 ) : ViewModel(), AddCategoryFragmentViewModel {
 
-    private val _categoryStatus = MutableLiveData<AddCategoryFragmentViewModel.CategoryStatus>()
-    val categoryStatus: LiveData<AddCategoryFragmentViewModel.CategoryStatus>
+    private val _categoryStatus = MutableLiveData<AddCategoryFragmentViewModel.UiState>()
+    val uiState: LiveData<AddCategoryFragmentViewModel.UiState>
         get() = _categoryStatus
 
     override fun addCategory(category: String) {
         // TODO Check if duplicate exists
-        _categoryStatus.value = AddCategoryFragmentViewModel.CategoryStatus.Loading
+        _categoryStatus.value = AddCategoryFragmentViewModel.UiState.Loading
 
         if (category.isEmpty()) {
-            _categoryStatus.value = AddCategoryFragmentViewModel.CategoryStatus.Empty
+            _categoryStatus.value = AddCategoryFragmentViewModel.UiState.Empty
             return
         } else {
             // TODO: 23-04-2021 Ask what is About field
             val requestBody =
                 AddCategoryRequest(
-                    accountManager.userName ?: throw Exception("Username must not be null"),
+                    accountManager.userId ?: throw Exception("Username must not be null"),
                     category,
                     ""
                 )
@@ -43,10 +43,10 @@ class AddCategoryFragmentViewModelImpl @Inject constructor(
                     is Result.Success -> {
                         // TODO: 13-08-2021 Need to store added category in local db
                         _categoryStatus.value =
-                            AddCategoryFragmentViewModel.CategoryStatus.Success(category)
+                            AddCategoryFragmentViewModel.UiState.Success(category)
                     }
                     is Result.UnknownError, is Result.NetworkError, is Result.ServerError -> {
-                        _categoryStatus.value = AddCategoryFragmentViewModel.CategoryStatus.Error
+                        _categoryStatus.value = AddCategoryFragmentViewModel.UiState.Error
                     }
                 }
             }

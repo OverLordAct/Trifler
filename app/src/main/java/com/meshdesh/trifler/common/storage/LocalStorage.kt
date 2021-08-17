@@ -1,4 +1,4 @@
-package com.meshdesh.trifler.common.storage.account
+package com.meshdesh.trifler.common.storage
 
 import android.content.Context
 import android.content.SharedPreferences

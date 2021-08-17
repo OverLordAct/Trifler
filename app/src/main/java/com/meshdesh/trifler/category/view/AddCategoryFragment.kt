@@ -34,7 +34,7 @@ class AddCategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setButtonListeners()
 
-        fragmentViewModel.categoryStatus.observe(viewLifecycleOwner, ::observeCategoryStatus)
+        fragmentViewModel.uiState.observe(viewLifecycleOwner, ::observeCategoryStatus)
     }
 
     private fun setButtonListeners() {
@@ -47,32 +47,32 @@ class AddCategoryFragment : Fragment() {
         }
     }
 
-    private fun observeCategoryStatus(status: AddCategoryFragmentViewModel.CategoryStatus) {
+    private fun observeCategoryStatus(status: AddCategoryFragmentViewModel.UiState) {
         when (status) {
-            is AddCategoryFragmentViewModel.CategoryStatus.Loading -> {
+            is AddCategoryFragmentViewModel.UiState.Loading -> {
                 binding?.progress?.visibility = View.VISIBLE
                 binding?.categoryInputLayout?.isErrorEnabled = false
             }
-            is AddCategoryFragmentViewModel.CategoryStatus.Empty -> {
+            is AddCategoryFragmentViewModel.UiState.Empty -> {
                 binding?.progress?.visibility = View.GONE
                 binding?.categoryInputLayout?.isErrorEnabled = true
                 binding?.categoryInputLayout?.error =
                     getString(R.string.category_step_1_empty_error)
             }
-            is AddCategoryFragmentViewModel.CategoryStatus.Duplicate -> {
+            is AddCategoryFragmentViewModel.UiState.Duplicate -> {
                 binding?.progress?.visibility = View.GONE
                 binding?.categoryInputLayout?.isErrorEnabled = true
                 binding?.categoryInputLayout?.error =
                     getString(R.string.category_step_1_duplicate_error)
             }
-            is AddCategoryFragmentViewModel.CategoryStatus.Error -> {
+            is AddCategoryFragmentViewModel.UiState.Error -> {
                 // TODO Explore use of snackbar
                 binding?.progress?.visibility = View.GONE
                 binding?.categoryInputLayout?.isErrorEnabled = true
                 binding?.categoryInputLayout?.error =
                     getString(R.string.category_step_1_network_error)
             }
-            is AddCategoryFragmentViewModel.CategoryStatus.Success -> {
+            is AddCategoryFragmentViewModel.UiState.Success -> {
                 binding?.progress?.visibility = View.GONE
                 binding?.categoryInputLayout?.isErrorEnabled = false
                 activityViewModel.updateCurrentStep(

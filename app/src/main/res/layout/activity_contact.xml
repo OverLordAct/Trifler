@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".contact.view.ContactActivity">
+    tools:context=".contact.view.AddContactActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbarLayout"

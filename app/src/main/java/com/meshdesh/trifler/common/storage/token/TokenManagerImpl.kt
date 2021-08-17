@@ -1,7 +1,7 @@
 package com.meshdesh.trifler.common.storage.token
 
-import com.meshdesh.trifler.common.storage.account.KEY
-import com.meshdesh.trifler.common.storage.account.LocalStorage
+import com.meshdesh.trifler.common.storage.KEY
+import com.meshdesh.trifler.common.storage.LocalStorage
 import javax.inject.Inject
 import javax.inject.Singleton
 

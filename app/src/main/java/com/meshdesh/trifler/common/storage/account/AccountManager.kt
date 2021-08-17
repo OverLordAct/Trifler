@@ -1,5 +1,7 @@
 package com.meshdesh.trifler.common.storage.account
 
+import com.meshdesh.trifler.common.storage.KEY
+import com.meshdesh.trifler.common.storage.LocalStorage
 import com.meshdesh.trifler.common.storage.token.TokenManager
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -14,7 +16,7 @@ class AccountManager @Inject constructor(
             return localStorage.get<String>(KEY.USERNAME) != null
         }
 
-    val userName: String?
+    val userId: String?
         get() {
             return if (isLoggedIn) {
                 localStorage[KEY.USERNAME]
